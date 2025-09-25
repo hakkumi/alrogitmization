@@ -1,0 +1,127 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            Console.WriteLine("Задание №1 [c 1 по 14]");
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 1:
+                    Console.WriteLine("введите число a<b");
+                    int a = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("введите число b>a");
+                    int b = Convert.ToInt32(Console.ReadLine());
+
+                    int N = 0;
+                    for (int i1 = a; i1 <= b; i1++)
+                    {
+                        Console.WriteLine(i1);
+                        N++;
+                    }
+                    Console.WriteLine("всего чисел в промежутке a и b - ", N);
+                    break;
+                case 2:
+                    Console.WriteLine("введите число a<b");
+                    int a2 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("введите число b>a");
+                    int b2 = Convert.ToInt32(Console.ReadLine());
+
+                    int N2 = 0;
+                    for (int i2 = b2; i2 >= a2; i2--)
+                    {
+                        Console.WriteLine(i2);
+                        N2++;
+                    }
+                    Console.WriteLine("всего чисел в промежутке a и b - ", N2);
+                    break;
+                case 3:
+                    Console.WriteLine("введите вещественное число A");
+                    int A3 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("введите целое число N для возведения в степень");
+                    int n3 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine(Math.Pow(A3, n3));
+                    break;
+                case 4:
+                    Console.WriteLine("введите число A ");
+                    int A4 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("введите степень числа");
+                    int n4 = Convert.ToInt32(Console.ReadLine());
+
+                    for(int i4 = 1;i4<=n4; i4++)
+                    {
+                        Console.WriteLine(Math.Pow(A4, i4));
+                    }
+                    break;
+                case 5:
+                    Console.WriteLine("введите вещественное число A");
+                    int A5 = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("введите целое число N");
+                    int n5 = Convert.ToInt32(Console.ReadLine());
+
+                    int N5 = 1;
+                    int i5 = 1+A5;
+                    while (N5 <= n5)
+                    {
+                        N5++;
+                        i5 = A5 * N5 + i5;
+
+                    }
+                    Console.WriteLine(i5);
+
+                    int N51 = 1;
+                    int i51 = A5 - 1;
+                    while (N51 <= n5)
+                    {
+                        N51++;
+                        i5 = A5 * -1*N51 + i51;
+
+                    }
+                    Console.WriteLine(i51);
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+
+                default:
+                    Console.WriteLine("Ошибка ввода данных");
+                    break;
+            }
+
+
+
+            Console.ReadKey();
+        }
+    }
+}
