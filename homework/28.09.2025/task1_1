@@ -1,0 +1,214 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Введите номер задачи (4–13): ");
+            int task = int.Parse(Console.ReadLine());
+
+            switch (task)
+            {
+
+                case 4:
+                    Console.WriteLine("Введите стороны a, b, c:");
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        double b = double.Parse(Console.ReadLine());
+                        double c = double.Parse(Console.ReadLine());
+
+                        double[] sides = { a, b, c };
+                        Array.Sort(sides);
+
+                        if (Math.Abs(sides[0] * sides[0] + sides[1] * sides[1] - sides[2] * sides[2]) < 1e-6)
+                            Console.WriteLine("Треугольник прямоугольный");
+                        else
+                            Console.WriteLine("Не прямоугольный");
+                    }
+                    break;
+
+
+                case 5:
+                    Console.WriteLine("Введите номер месяца (1-12):");
+                    {
+                        int m = int.Parse(Console.ReadLine());
+                        switch (m)
+                        {
+                            case 3:
+                            case 4:
+                            case 5: Console.WriteLine("Весна"); break;
+                            case 6:
+                            case 7:
+                            case 8: Console.WriteLine("Лето"); break;
+                            case 9:
+                            case 10:
+                            case 11: Console.WriteLine("Осень"); break;
+                            case 12:
+                            case 1:
+                            case 2: Console.WriteLine("Зима"); break;
+                            default: Console.WriteLine("Нет такого месяца!"); break;
+                        }
+                    }
+                    break;
+
+
+                case 6:
+                    Console.WriteLine("Введите три числа A, B, C:");
+                    {
+                        double A = double.Parse(Console.ReadLine());
+                        double B = double.Parse(Console.ReadLine());
+                        double C = double.Parse(Console.ReadLine());
+
+                        if (A + B + C > 0)
+                        {
+                            A *= 2; B *= 2; C *= 2;
+                        }
+                        else
+                        {
+                            A = B = C = 0;
+                        }
+                        Console.WriteLine($"Результат: A={A}, B={B}, C={C}");
+                    }
+                    break;
+
+
+                case 7:
+                    Console.WriteLine("Введите координаты точки A(x,y):");
+                    {
+                        double x1 = double.Parse(Console.ReadLine());
+                        double y1 = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Введите координаты точки B(x,y):");
+                        double x2 = double.Parse(Console.ReadLine());
+                        double y2 = double.Parse(Console.ReadLine());
+
+                        double dA = Math.Sqrt(x1 * x1 + y1 * y1);
+                        double dB = Math.Sqrt(x2 * x2 + y2 * y2);
+
+                        if (dA < dB) Console.WriteLine("Точка A ближе");
+                        else if (dB < dA) Console.WriteLine("Точка B ближе");
+                        else Console.WriteLine("Обе точки на одинаковом расстоянии");
+                    }
+                    break;
+
+
+                case 8:
+                    Console.WriteLine("Введите стороны a, b, c:");
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        double b = double.Parse(Console.ReadLine());
+                        double c = double.Parse(Console.ReadLine());
+
+                        if (a == b || b == c || a == c)
+                            Console.WriteLine("Треугольник равнобедренный");
+                        else
+                            Console.WriteLine("Треугольник не равнобедренный");
+                    }
+                    break;
+
+
+                case 9:
+                    Console.WriteLine("Введите стоимость минуты у трёх операторов и процент скидки (через пробел):");
+                    {
+                        double op1 = double.Parse(Console.ReadLine());
+                        double op2 = double.Parse(Console.ReadLine());
+                        double op3 = double.Parse(Console.ReadLine());
+                        double discount = double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Введите время разговора (минут):");
+                        double t = double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Разговоры в будни или выходные? (1 - будни, 2 - выходные):");
+                        int d = int.Parse(Console.ReadLine());
+
+                        if (d == 2) 
+                        {
+                            op1 *= (1 - discount / 100);
+                            op2 *= (1 - discount / 100);
+                            op3 *= (1 - discount / 100);
+                        }
+
+                        Console.WriteLine($"Оператор 1: {op1 * t} руб");
+                        Console.WriteLine($"Оператор 2: {op2 * t} руб");
+                        Console.WriteLine($"Оператор 3: {op3 * t} руб");
+                    }
+                    break;
+
+                case 10:
+                    Console.WriteLine("Введите номер темы (1-3): 1-Новый год, 2-ДР, 3-День защитника");
+                    {
+                        int theme = int.Parse(Console.ReadLine());
+                        Console.WriteLine("Введите вариант (a,b,c):");
+                        string var = Console.ReadLine();
+
+                        string msg = "";
+                        switch (theme)
+                        {
+                            case 1: msg = "Новогодняя открытка"; break;
+                            case 2: msg = "С Днём Рождения"; break;
+                            case 3: msg = "С Днём Защитника Отечества"; break;
+                            default: msg = "Ошибка: нет такой темы"; break;
+                        }
+                        Console.WriteLine($"Вы выбрали вариант {var}: {msg}");
+                    }
+                    break;
+
+                case 11:
+                    Console.WriteLine("Введите два числа a и b:");
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        double b = double.Parse(Console.ReadLine());
+
+                        if (a * b < 0) 
+                        {
+                            a = 0;
+                            b = 0;
+                        }
+
+                        Console.WriteLine($"Результат: a={a}, b={b}");
+                    }
+                    break;
+
+                case 12:
+                    Console.WriteLine("Введите три числа:");
+                    {
+                        double a = double.Parse(Console.ReadLine());
+                        double b = double.Parse(Console.ReadLine());
+                        double c = double.Parse(Console.ReadLine());
+
+                        double min = Math.Min(a, Math.Min(b, c));
+                        Console.WriteLine($"Минимальное: {min}");
+                    }
+                    break;
+
+                case 13:
+                    Console.WriteLine("Введите три числа x, y, z:");
+                    {
+                        double x = double.Parse(Console.ReadLine());
+                        double y = double.Parse(Console.ReadLine());
+                        double z = double.Parse(Console.ReadLine());
+
+                        double avg = (x + y + z) / 3.0;
+
+                        double maxAbs = x;
+                        if (Math.Abs(y) > Math.Abs(maxAbs)) maxAbs = y;
+                        if (Math.Abs(z) > Math.Abs(maxAbs)) maxAbs = z;
+
+                        Console.WriteLine($"Среднее арифметическое: {avg}");
+                        Console.WriteLine($"Число с наибольшим модулем: {maxAbs}");
+                    }
+                    break;
+
+                default:
+                    Console.WriteLine("Нет такой задачи!");
+                    break;
+            }
+        }
+    }
+
+}
