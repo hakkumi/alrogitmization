@@ -1,0 +1,210 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+
+
+        static void Main()
+        {
+            Console.WriteLine("Введите номер задачи (16–28):");
+            int task = int.Parse(Console.ReadLine());
+
+            switch (task)
+            {
+                case 16:
+                    Console.WriteLine("Введите три стороны треугольника:");
+                    double a16 = double.Parse(Console.ReadLine());
+                    double b16 = double.Parse(Console.ReadLine());
+                    double c16 = double.Parse(Console.ReadLine());
+
+                    if (a16 + b16 > c16 && a16 + c16 > b16 && b16 + c16 > a16)
+                        Console.WriteLine("Треугольник существует");
+                    else
+                        Console.WriteLine("Треугольник не существует");
+                    break;
+
+                case 17:
+                    Console.WriteLine("Введите координаты точки B(x, y):");
+                    double x17 = double.Parse(Console.ReadLine());
+                    double y17 = double.Parse(Console.ReadLine());
+
+                    double fx17;
+                    if (x17 > 1)
+                    {
+                        fx17 = Math.Sqrt(Math.Sin(x17 * x17) * Math.Sin(x17 * x17));
+                    }
+                    else
+                    {
+                        fx17 = Math.Sqrt(6 * Math.Asin(x17 * x17) + 4.5 * Math.Pow(x17, 6) + 4 * x17 * x17 + 2);
+                    }
+
+                    double eps = 1e-3;
+                    if (Math.Abs(fx17 - y17) < eps)
+                        Console.WriteLine("Точка лежит на кривой");
+                    else
+                        Console.WriteLine("Точка не лежит на кривой");
+                    break;
+
+                case 18:
+                    double x18 = 3.5;
+                    double y18 = 72;
+
+                    if (y18 >= 0 && y18 <= 2 - x18 * x18)
+                        Console.WriteLine("Точка внутри области");
+                    else
+                        Console.WriteLine("Точка вне области");
+                    break;
+
+                case 19:
+                    Console.WriteLine("Введите координаты точки B(x,y):");
+                    double x19 = double.Parse(Console.ReadLine());
+                    double y19 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите радиус R:");
+                    double R19 = double.Parse(Console.ReadLine());
+
+                    double dist19 = Math.Sqrt(x19 * x19 + y19 * y19);
+                    if (dist19 <= R19)
+                        Console.WriteLine("Точка внутри окружности");
+                    else
+                        Console.WriteLine("Точка вне окружности");
+                    break;
+
+                case 20:
+                    Console.WriteLine("Введите стороны треугольника a, b, c:");
+                    double a20 = double.Parse(Console.ReadLine());
+                    double b20 = double.Parse(Console.ReadLine());
+                    double c20 = double.Parse(Console.ReadLine());
+
+                    if (Math.Abs(a20 * a20 + b20 * b20 - c20 * c20) < 1e-6 ||
+                        Math.Abs(a20 * a20 + c20 * c20 - b20 * b20) < 1e-6 ||
+                        Math.Abs(b20 * b20 + c20 * c20 - a20 * a20) < 1e-6)
+                        Console.WriteLine("Треугольник прямоугольный");
+                    else
+                        Console.WriteLine("Не прямоугольный");
+                    break;
+
+                case 21:
+                    double W21 = 30e3 * 1.602e-19;
+                    double m21 = 9.11e-31;  
+                    double q21 = 1.602e-19;  
+
+                    double v21 = Math.Sqrt(2 * W21 / m21);
+
+                    double Rmin = 0.01; 
+                    double Rmax = 0.06; 
+
+                    double Bmin = (m21 * v21) / (q21 * Rmax);
+                    double Bmax = (m21 * v21) / (q21 * Rmin);
+
+                    Console.WriteLine($"Индукция должна быть в диапазоне {Bmin:E3} – {Bmax:E3} Тл");
+                    break;
+
+                case 22:
+                    Console.WriteLine("Введите координаты точек a, b, c (на оси OX):");
+                    double a22 = double.Parse(Console.ReadLine());
+                    double b22 = double.Parse(Console.ReadLine());
+                    double c22 = double.Parse(Console.ReadLine());
+
+                    double d1 = Math.Abs(a22 - b22);
+                    double d2 = Math.Abs(a22 - c22);
+
+                    if (d1 < d2) Console.WriteLine("Точка b ближе к a");
+                    else if (d2 < d1) Console.WriteLine("Точка c ближе к a");
+                    else Console.WriteLine("b и c равноудалены от a");
+                    break;
+
+                case 23:
+                    Console.WriteLine("Введите числа a и b:");
+                    int a23 = int.Parse(Console.ReadLine());
+                    int b23 = int.Parse(Console.ReadLine());
+
+                    if (a23 != 0 && b23 % a23 == 0) Console.WriteLine("a делитель b");
+                    if (b23 != 0 && a23 % b23 == 0) Console.WriteLine("b делитель a");
+                    if ((a23 == 0 || b23 % a23 != 0) && (b23 == 0 || a23 % b23 != 0))
+                        Console.WriteLine("Ни одно не является делителем другого");
+                    break;
+
+                case 24:
+                    Console.WriteLine("Введите три числа:");
+                    double a24 = double.Parse(Console.ReadLine());
+                    double b24 = double.Parse(Console.ReadLine());
+                    double c24 = double.Parse(Console.ReadLine());
+
+                    if (a24 == b24 || b24 == c24 || a24 == c24)
+                        Console.WriteLine("Есть равные числа");
+                    else
+                        Console.WriteLine("Все числа разные");
+                    break;
+
+                case 25:
+                    Console.WriteLine("Введите скорость электрона (Мм/с):");
+                    double v25 = double.Parse(Console.ReadLine()) * 1e6; 
+
+                    double m0 = 9.11e-31;
+                    double q0 = 1.602e-19;
+                    double B25 = 56e-3;
+
+                    double r25 = (m0 * v25) / (q0 * B25);
+
+                    if (r25 >= 0.005 && r25 <= 0.015)
+                        Console.WriteLine("Траектория попадает в кольцо");
+                    else
+                        Console.WriteLine("Траектория не попадает");
+                    break;
+
+                case 26:
+                    Console.WriteLine("Введите три числа:");
+                    double n1 = double.Parse(Console.ReadLine());
+                    double n2 = double.Parse(Console.ReadLine());
+                    double n3 = double.Parse(Console.ReadLine());
+
+                    double avg = (n1 + n2 + n3) / 3.0;
+
+                    Console.WriteLine("Числа с модулем больше среднего:");
+                    if (Math.Abs(n1) > avg) Console.WriteLine(n1);
+                    if (Math.Abs(n2) > avg) Console.WriteLine(n2);
+                    if (Math.Abs(n3) > avg) Console.WriteLine(n3);
+                    break;
+
+                case 27:
+                    Console.WriteLine("Введите текущее время (часы 0–23):");
+                    int h = int.Parse(Console.ReadLine());
+
+                    if (h >= 6 && h < 12) Console.WriteLine("Утро");
+                    else if (h >= 12 && h < 18) Console.WriteLine("День");
+                    else if (h >= 18 && h < 24) Console.WriteLine("Вечер");
+                    else if (h >= 0 && h < 6) Console.WriteLine("Ночь");
+                    else Console.WriteLine("Некорректное время");
+                    break;
+
+                case 28:
+                    double G = 6.7e-8;
+                    double mv = 4.86e27;
+                    double rv = 6175 * 1e5;  
+                    double me = 5.98e27;
+                    double re = 6371 * 1e5;
+                    double ms = 5.68e29;
+                    double rs = 57750 * 1e5;
+
+                    double gv = G * mv / (rv * rv);
+                    double ge = G * me / (re * re);
+                    double gs = G * ms / (rs * rs);
+
+                    if (gv > ge && gv > gs) Console.WriteLine("Наибольшее g у Венеры");
+                    else if (ge > gv && ge > gs) Console.WriteLine("Наибольшее g у Земли");
+                    else Console.WriteLine("Наибольшее g у Сатурна");
+                    break;
+
+                default:
+                    Console.WriteLine("Нет такой задачи");
+                    break;
+            }
+            }
+        }
+    }
