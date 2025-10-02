@@ -1,0 +1,157 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+
+
+        static void Main()
+        {
+            Console.WriteLine("Введите номер задачи (13-19):");
+            int taskNumber;
+            if (!int.TryParse(Console.ReadLine(), out taskNumber))
+            {
+                Console.WriteLine("Ошибка ввода. Введите число.");
+                return;
+            }
+
+            switch (taskNumber)
+            {
+                case 13:
+                    Console.WriteLine("Введите x1, y1:");
+                    double x1 = Convert.ToDouble(Console.ReadLine());
+                    double y1 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите x2, y2:");
+                    double x2 = Convert.ToDouble(Console.ReadLine());
+                    double y2 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите x3, y3:");
+                    double x3 = Convert.ToDouble(Console.ReadLine());
+                    double y3 = Convert.ToDouble(Console.ReadLine());
+
+                    if (x1 == x2 && x3 != x1)
+                        Console.WriteLine("Через точку A3 можно провести перпендикулярную прямую (вертикаль).");
+                    else if (x1 != x2)
+                        Console.WriteLine("Через точку A3 можно провести перпендикулярную прямую.");
+                    else
+                        Console.WriteLine("Через точку A3 провести перпендикулярную прямую невозможно.");
+                    break;
+
+                case 14:
+                    Console.WriteLine("Введите средний балл диплома (3-5):");
+                    double avgGrade = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите стаж работы (лет):");
+                    double experience = Convert.ToDouble(Console.ReadLine());
+
+                    double coefficient = experience == 0 ? 1 :
+                                         experience < 2 ? 1.3 :
+                                         experience <= 5 ? 1.6 : 1.6;
+
+                    double rating = avgGrade * coefficient;
+                    Console.WriteLine($"Рейтинг: {rating:F2}");
+                    if (rating >= 45)
+                        Console.WriteLine("Принят в магистратуру.");
+                    else
+                        Console.WriteLine("Не принят в магистратуру.");
+                    break;
+
+                case 15:
+                    Console.WriteLine("Введите x1, y1:");
+                    int rx1 = Convert.ToInt32(Console.ReadLine());
+                    int ry1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите x2, y2:");
+                    int rx2 = Convert.ToInt32(Console.ReadLine());
+                    int ry2 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите x3, y3:");
+                    int rx3 = Convert.ToInt32(Console.ReadLine());
+                    int ry3 = Convert.ToInt32(Console.ReadLine());
+
+                    int rx4 = rx1 ^ rx2 ^ rx3;
+                    int ry4 = ry1 ^ ry2 ^ ry3;
+                    Console.WriteLine($"Координаты четвертой вершины: ({rx4}, {ry4})");
+                    break;
+
+                case 16:
+                    Console.WriteLine("Введите четырехзначное число:");
+                    int num16 = Convert.ToInt32(Console.ReadLine());
+                    int d1 = num16 / 1000;
+                    int d2 = (num16 / 100) % 10;
+                    int d3 = (num16 / 10) % 10;
+                    int d4 = num16 % 10;
+                    int sumFirst = d1 + d2;
+                    int sumLast = d3 + d4;
+                    int sumAll = d1 + d2 + d3 + d4;
+
+                    Console.WriteLine(sumFirst == sumLast
+                        ? "Сумма двух первых цифр равна сумме двух последних."
+                        : "Сумма двух первых цифр не равна сумме двух последних.");
+
+                    Console.WriteLine(sumAll % 7 == 0
+                        ? "Сумма цифр кратна 7."
+                        : "Сумма цифр не кратна 7.");
+                    break;
+
+                case 17:
+                    Console.WriteLine("Введите четырехзначное число:");
+                    int num17 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Введите число a:");
+                    int a = Convert.ToInt32(Console.ReadLine());
+
+                    int p1 = num17 / 1000;
+                    int p2 = (num17 / 100) % 10;
+                    int p3 = (num17 / 10) % 10;
+                    int p4 = num17 % 10;
+                    int prod = p1 * p2 * p3 * p4;
+
+                    Console.WriteLine(prod % 3 == 0 ? "Произведение цифр кратно 3." : "Произведение цифр не кратно 3.");
+                    Console.WriteLine(prod % a == 0 ? $"Произведение цифр кратно {a}." : $"Произведение цифр не кратно {a}.");
+                    break;
+
+                case 18:
+                    Console.WriteLine("Введите стороны прямоугольника a и b:");
+                    double a18 = Convert.ToDouble(Console.ReadLine());
+                    double b18 = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите стороны прямоугольника c и d:");
+                    double c18 = Convert.ToDouble(Console.ReadLine());
+                    double d18 = Convert.ToDouble(Console.ReadLine());
+
+                    if ((a18 <= c18 && b18 <= d18) || (a18 <= d18 && b18 <= c18))
+                        Console.WriteLine("Прямоугольник помещается.");
+                    else
+                        Console.WriteLine("Прямоугольник не помещается.");
+                    break;
+
+                case 19:
+                    Console.WriteLine("Введите размеры кирпича a, b, c:");
+                    double ka = Convert.ToDouble(Console.ReadLine());
+                    double kb = Convert.ToDouble(Console.ReadLine());
+                    double kc = Convert.ToDouble(Console.ReadLine());
+                    Console.WriteLine("Введите размеры отверстия x, y:");
+                    double x = Convert.ToDouble(Console.ReadLine());
+                    double y = Convert.ToDouble(Console.ReadLine());
+
+                    double[] brick = { ka, kb, kc };
+                    Array.Sort(brick); 
+                    double minHole = Math.Min(x, y);
+                    double maxHole = Math.Max(x, y);
+
+                    if (brick[0] <= minHole && brick[1] <= maxHole)
+                        Console.WriteLine("Кирпич проходит через отверстие.");
+                    else
+                        Console.WriteLine("Кирпич не проходит через отверстие.");
+                    break;
+
+                default:
+                    Console.WriteLine("Такой задачи нет.");
+                    break;
+            }
+
+            Console.WriteLine("Нажмите любую клавишу для выхода...");
+            Console.ReadKey();
+        }
+        }
+    }
