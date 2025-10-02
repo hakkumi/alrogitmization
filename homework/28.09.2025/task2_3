@@ -1,0 +1,160 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+        static double Cbrt(double x)
+        {
+            return x >= 0 ? Math.Pow(x, 1.0 / 3.0) : -Math.Pow(-x, 1.0 / 3.0);
+        }
+
+        static double Clamp(double value, double min, double max)
+        {
+            if (value < min) return min;
+            if (value > max) return max;
+            return value;
+        }
+
+        static void Main()
+        {
+            Console.WriteLine("Введите номер задачи (22–30): ");
+            int task = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введите x: ");
+            double x = double.Parse(Console.ReadLine());
+
+            double y = 0;
+
+            switch (task)
+            {
+                case 22:
+                    Console.WriteLine("Введите a, b: ");
+                    double a22 = double.Parse(Console.ReadLine());
+                    double b22 = double.Parse(Console.ReadLine());
+
+                    if (x < a22)
+                        y = a22 + b22 * Math.Sin(x) * Math.Pow(x, 3.5);
+                    else if (x <= Math.Pow(b22, 2))
+                        y = a22 + Math.Log(Math.Abs(a22 * b22 - Math.Pow(x, 3))) + Math.Log(x);
+                    else
+                        y = Math.Sqrt(a22 + 1.0 / Math.Tan(x)) + b22 * Math.Sin(x);
+                    break;
+
+                case 23:
+                    Console.WriteLine("Введите a, b, z: ");
+                    double a23 = double.Parse(Console.ReadLine());
+                    double b23 = double.Parse(Console.ReadLine());
+                    double z23 = double.Parse(Console.ReadLine());
+
+                    if (x < Math.Pow(a23, 3))
+                        y = Math.Log(Math.Abs(b23 * z23 * x)) + 2 * Math.Pow(a23, 3);
+                    else if (x <= b23)
+                        y = a23 * Math.Pow(x, 2) + Math.Pow(b23, 4) + Math.Sin(2 * x);
+                    else
+                        y = Math.Cos(a23 * (x + b23)) + Math.Log(Math.Abs(2 * x));
+                    break;
+
+                case 24:
+                    Console.WriteLine("Введите a, b: ");
+                    double a24 = double.Parse(Console.ReadLine());
+                    double b24 = double.Parse(Console.ReadLine());
+
+                    if (x < a24)
+                        y = Math.Exp(x) + (2 + 7.7 * a24) * Math.Pow(x, 3);
+                    else if (x <= Math.Pow(b24, 2))
+                        y = Math.Tan(a24 * x) + Math.Cos(b24 * x);
+                    else
+                        y = Math.Log(Math.Sin(a24 * b24 + Math.Pow(x, 2)));
+                    break;
+
+                case 25:
+                    Console.WriteLine("Введите a, b: ");
+                    double a25 = double.Parse(Console.ReadLine());
+                    double b25 = double.Parse(Console.ReadLine());
+
+                    if (x < a25)
+                        y = a25 + 2 * Math.Cos(b25 * x);
+                    else if (x <= b25)
+                        y = a25 + Math.Sin(Math.Pow(b25, 2)) + Math.Log(Math.Abs(x));
+                    else
+                        y = Cbrt(0.3 * b25 + Math.Sqrt(Math.Abs(a25 - 2 - Math.Cos(x))));
+                    break;
+
+                case 26:
+                    if (x > 0.5)
+                        y = (2 * x + 1) / (3.71 - Math.Pow(x, 2));
+                    else if (x >= -0.5 && x <= 1e-3)
+                        y = Math.Sin(2 * x) / Math.Pow(Math.Sin(3 * x / 3.0), 2);
+                    else
+                        y = (Math.Tan(x + 2) - Math.Exp(x)) / (3.5 * x);
+                    break;
+
+                case 27:
+                    Console.WriteLine("Введите a, b, p: ");
+                    double a27 = double.Parse(Console.ReadLine());
+                    double b27 = double.Parse(Console.ReadLine());
+                    double p27 = double.Parse(Console.ReadLine());
+
+                    if (Math.Abs(x) < 0.2)
+                        y = Math.Pow(a27, 2) * Math.Pow(x, 3) + Math.Sqrt(Math.Pow(b27, 4) + 1.7);
+                    else if (Math.Abs(x) == 0.2)
+                        y = Math.Atan(2 * x) - Math.Abs(p27);
+                    else
+                        y = Math.Sqrt(Math.Abs(Math.Log(a27 * b27) + 4.3 * x));
+                    break;
+
+                case 28:
+                    Console.WriteLine("Введите a, b, c: ");
+                    double a28 = double.Parse(Console.ReadLine());
+                    double b28 = double.Parse(Console.ReadLine());
+                    double c28 = double.Parse(Console.ReadLine());
+
+                    if (x < a28 + b28)
+                        y = Math.Sin(Math.Exp(a28 + b28) * Math.Pow(x, 2));
+                    else if (x == a28 + b28)
+                        y = Math.Acos(a28 * b28 * c28) + Math.Cbrt(x);
+                    else
+                        y = Math.Asin(Math.Cos(Math.Sqrt(Math.Abs(x / (c28 == 0 ? 1e-12 : c28)))));
+                    break;
+
+                case 29:
+                    Console.WriteLine("Введите k, rs: ");
+                    double k29 = double.Parse(Console.ReadLine());
+                    double rs29 = double.Parse(Console.ReadLine());
+
+                    if (x > rs29)
+                        y = 1.0 / Math.Pow(x, 3) + Math.Log(Math.Abs(x * x * x)) + Math.Log(Math.Abs(x)) + k29;
+                    else if (x == rs29)
+                        y = Cbrt(x * x * x) + Math.Sqrt(Math.Abs(Math.Asin(Clamp(k29, -1.0, 1.0))));
+                    else
+                        y = Math.Atan(b28 * x + Math.Tan(rs29));
+                    break;
+
+                case 30:
+                    Console.WriteLine("Введите a, b, z: ");
+                    double a30 = double.Parse(Console.ReadLine());
+                    double b30 = double.Parse(Console.ReadLine());
+                    double z30 = double.Parse(Console.ReadLine());
+
+                    if (x < a30)
+                        y = a30 * a30 + Math.Atan(Math.Sin(b30 * x)) + Math.Cos(x * x);
+                    else if (x <= Math.Log(b30))
+                        y = Math.Sqrt(a30 + b30) + z30 * Math.Sin(2 * x);
+                    else
+                        y = Math.Atan(a30 * x + b30 + z30);
+                    break;
+
+                default:
+                    Console.WriteLine("Нет такой задачи!");
+                    return;
+            }
+
+            Console.WriteLine($"Результат: y = {y}");
+        }
+    }
+}
