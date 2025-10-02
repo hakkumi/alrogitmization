@@ -1,0 +1,226 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+
+
+        static void Main()
+        {
+            Console.WriteLine("Введите номер задачи (1–15):");
+            int task = int.Parse(Console.ReadLine());
+
+            switch (task)
+            {
+                case 1:
+                    Console.WriteLine("Введите два числа:");
+                    double x1 = double.Parse(Console.ReadLine());
+                    double y1 = double.Parse(Console.ReadLine());
+
+                    double sumSquares = x1 * x1 + y1 * y1;
+                    double squareSum = Math.Pow(x1 + y1, 2);
+
+                    if (sumSquares > squareSum)
+                        Console.WriteLine("Сумма квадратов больше");
+                    else if (sumSquares < squareSum)
+                        Console.WriteLine("Квадрат суммы больше");
+                    else
+                        Console.WriteLine("Они равны");
+                    break;
+
+                case 2:
+                    Console.WriteLine("Введите зарплату и стаж:");
+                    double salary = double.Parse(Console.ReadLine());
+                    int experience = int.Parse(Console.ReadLine());
+
+                    double percent = 0;
+                    if (experience >= 2 && experience < 5) percent = 0.02;
+                    else if (experience >= 5 && experience < 10) percent = 0.05;
+
+                    double bonus = salary * percent;
+                    Console.WriteLine($"Надбавка: {bonus}, к выплате: {salary + bonus}");
+                    break;
+
+                case 3:
+                    Console.WriteLine("Введите координаты точки A:");
+                    double ax = double.Parse(Console.ReadLine());
+                    double ay = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите координаты точки B:");
+                    double bx = double.Parse(Console.ReadLine());
+                    double by = double.Parse(Console.ReadLine());
+
+                    double distA = Math.Sqrt(ax * ax + ay * ay);
+                    double distB = Math.Sqrt(bx * bx + by * by);
+
+                    if (distA > distB) Console.WriteLine("A дальше от начала координат");
+                    else if (distB > distA) Console.WriteLine("B дальше от начала координат");
+                    else Console.WriteLine("Обе на одинаковом расстоянии");
+                    break;
+
+                case 4:
+                    Console.WriteLine("Введите стороны треугольника a, b, c:");
+                    double a4 = double.Parse(Console.ReadLine());
+                    double b4 = double.Parse(Console.ReadLine());
+                    double c4 = double.Parse(Console.ReadLine());
+
+                    double[] sides = { a4, b4, c4 };
+                    Array.Sort(sides);
+
+                    if (Math.Abs(sides[0] * sides[0] + sides[1] * sides[1] - sides[2] * sides[2]) < 1e-6)
+                        Console.WriteLine("Прямоугольный");
+                    else
+                        Console.WriteLine("Не прямоугольный");
+                    break;
+
+                case 5:
+                    Console.WriteLine("Введите три числа:");
+                    for (int i = 0; i < 3; i++)
+                    {
+                        double num = double.Parse(Console.ReadLine());
+                        if (num > 0) Console.WriteLine(Math.Pow(num, 2));
+                        else Console.WriteLine(num);
+                    }
+                    break;
+
+                case 6:
+                    Console.WriteLine("Введите координаты точки A(x,y):");
+                    double x6 = double.Parse(Console.ReadLine());
+                    double y6 = double.Parse(Console.ReadLine());
+
+                    if (x6 > 0 && y6 > 0) Console.WriteLine("Первая четверть");
+                    else if (x6 < 0 && y6 > 0) Console.WriteLine("Вторая четверть");
+                    else if (x6 < 0 && y6 < 0) Console.WriteLine("Третья четверть");
+                    else if (x6 > 0 && y6 < 0) Console.WriteLine("Четвертая четверть");
+                    else Console.WriteLine("На оси");
+                    break;
+
+                case 7:
+                    Console.WriteLine("Введите координаты точки A(x,y):");
+                    double x7 = double.Parse(Console.ReadLine());
+                    double y7 = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите радиус R:");
+                    double R7 = double.Parse(Console.ReadLine());
+
+                    if (x7 * x7 + y7 * y7 <= R7 * R7)
+                        Console.WriteLine("Точка внутри окружности");
+                    else
+                        Console.WriteLine("Точка вне окружности");
+                    break;
+
+                case 8:
+                    Console.WriteLine("Введите стороны первого треугольника a1,b1,c1:");
+                    double a1 = double.Parse(Console.ReadLine());
+                    double b1 = double.Parse(Console.ReadLine());
+                    double c1 = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите стороны второго треугольника a2,b2,c2:");
+                    double a2 = double.Parse(Console.ReadLine());
+                    double b2 = double.Parse(Console.ReadLine());
+                    double c2 = double.Parse(Console.ReadLine());
+
+                    double p1 = (a1 + b1 + c1) / 2.0;
+                    double S1 = Math.Sqrt(p1 * (p1 - a1) * (p1 - b1) * (p1 - c1));
+
+                    double p2 = (a2 + b2 + c2) / 2.0;
+                    double S2 = Math.Sqrt(p2 * (p2 - a2) * (p2 - b2) * (p2 - c2));
+
+                    if (S1 > S2) Console.WriteLine("Первый треугольник больше");
+                    else if (S2 > S1) Console.WriteLine("Второй треугольник больше");
+                    else Console.WriteLine("Они равны");
+                    break;
+
+                case 9:
+                    Console.WriteLine("Введите сторону квадрата d и радиус R:");
+                    double d9 = double.Parse(Console.ReadLine());
+                    double R9 = double.Parse(Console.ReadLine());
+
+                    double Sq = d9 * d9;
+                    double Sc = Math.PI * R9 * R9;
+
+                    if (Sq > Sc) Console.WriteLine("Квадрат больше");
+                    else if (Sc > Sq) Console.WriteLine("Круг больше");
+                    else Console.WriteLine("Одинаковы");
+                    break;
+
+                case 10:
+                    Console.WriteLine("Введите три числа:");
+                    for (int i = 0; i < 3; i++)
+                    {
+                        double num = double.Parse(Console.ReadLine());
+                        if (num > 0) Console.WriteLine(Math.Pow(num, 3));
+                        else Console.WriteLine(0);
+                    }
+                    break;
+
+                case 11:
+                    Console.WriteLine("Введите число:");
+                    int n11 = int.Parse(Console.ReadLine());
+
+                    if (n11 % 2 == 0) Console.WriteLine("Число четное");
+                    else if (n11 % 10 == 3) Console.WriteLine("Оканчивается на 3");
+                    else Console.WriteLine("Не подходит");
+                    break;
+
+                case 12:
+                    Console.WriteLine("Введите координаты точки A(x,y):");
+                    double x12 = double.Parse(Console.ReadLine());
+                    double y12 = double.Parse(Console.ReadLine());
+
+                    if (x12 > 0 && y12 > 0) Console.WriteLine("Точка в первой четверти");
+                    else Console.WriteLine("Не в первой четверти");
+                    break;
+
+                case 13:
+                    Console.WriteLine("Введите сумму вклада и срок (6 или 12 месяцев):");
+                    double deposit = double.Parse(Console.ReadLine());
+                    int term = int.Parse(Console.ReadLine());
+
+                    double rate = (term == 6) ? 0.06 : 0.08;
+                    double total = deposit * rate * term / 12.0;
+                    Console.WriteLine($"Сумма процентов: {total}");
+                    break;
+
+                case 14:
+                    Console.WriteLine("Введите два числа:");
+                    double x14 = double.Parse(Console.ReadLine());
+                    double y14 = double.Parse(Console.ReadLine());
+
+                    double diffSquares = x14 * x14 - y14 * y14;
+                    double absDiff = Math.Abs((x14 - y14) * (x14 - y14));
+
+                    if (diffSquares > absDiff) Console.WriteLine("Разность квадратов больше");
+                    else if (absDiff > diffSquares) Console.WriteLine("Квадрат разности больше");
+                    else Console.WriteLine("Они равны");
+                    break;
+
+                case 15:
+                    Console.WriteLine("Введите координаты точки A:");
+                    double ax15 = double.Parse(Console.ReadLine());
+                    double ay15 = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите координаты точки B:");
+                    double bx15 = double.Parse(Console.ReadLine());
+                    double by15 = double.Parse(Console.ReadLine());
+
+                    double distA15 = Math.Sqrt(ax15 * ax15 + ay15 * ay15);
+                    double distB15 = Math.Sqrt(bx15 * bx15 + by15 * by15);
+
+                    if (distA15 < distB15) Console.WriteLine("A ближе к началу координат");
+                    else if (distB15 < distA15) Console.WriteLine("B ближе к началу координат");
+                    else Console.WriteLine("Обе на одинаковом расстоянии");
+                    break;
+
+                default:
+                    Console.WriteLine("Нет такой задачи!");
+                    break; ;
+            }
+        }
+    }
+}
