@@ -1,0 +1,223 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Program
+    {
+
+
+        static void Main()
+        {
+            Console.WriteLine("Введите номер задачи (1–30):");
+            int task = int.Parse(Console.ReadLine());
+
+            switch (task)
+            {
+                case 16:
+                    Console.WriteLine("Введите координаты точки A(x,y):");
+                    double x16 = double.Parse(Console.ReadLine());
+                    double y16 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите радиусы r и R (внутренний и внешний):");
+                    double r16 = double.Parse(Console.ReadLine());
+                    double R16 = double.Parse(Console.ReadLine());
+
+                    double dist16 = Math.Sqrt(x16 * x16 + y16 * y16);
+                    if (dist16 >= r16 && dist16 <= R16)
+                        Console.WriteLine("Точка лежит внутри тора");
+                    else
+                        Console.WriteLine("Точка вне тора");
+                    break;
+
+                case 17:
+                    Console.WriteLine("Введите координаты точки A(x,y):");
+                    double x17 = double.Parse(Console.ReadLine());
+                    double y17 = double.Parse(Console.ReadLine());
+
+                    if (x17 > 0 && y17 < 0) Console.WriteLine("Точка в 4-й четверти");
+                    else Console.WriteLine("Не в 4-й четверти");
+                    break;
+
+                case 18:
+                    Console.WriteLine("Введите стороны треугольника a, b, c:");
+                    double a18 = double.Parse(Console.ReadLine());
+                    double b18 = double.Parse(Console.ReadLine());
+                    double c18 = double.Parse(Console.ReadLine());
+
+                    if (a18 == b18 || b18 == c18 || a18 == c18)
+                        Console.WriteLine("Равнобедренный");
+                    else
+                        Console.WriteLine("Не равнобедренный");
+                    break;
+
+                case 19:
+                    Console.WriteLine("Введите три целых числа a, b, c:");
+                    int a19 = int.Parse(Console.ReadLine());
+                    int b19 = int.Parse(Console.ReadLine());
+                    int c19 = int.Parse(Console.ReadLine());
+
+                    if (a19 * a19 + b19 * b19 == c19 * c19 ||
+                        a19 * a19 + c19 * c19 == b19 * b19 ||
+                        b19 * b19 + c19 * c19 == a19 * a19)
+                        Console.WriteLine("Это тройка Пифагора");
+                    else
+                        Console.WriteLine("Не является тройкой Пифагора");
+                    break;
+
+                case 20:
+                    Console.WriteLine("Введите скорость в л/с:");
+                    double v1 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите скорость в м^3/мин:");
+                    double v2 = double.Parse(Console.ReadLine());
+
+                    double v1m3 = v1 / 1000.0;    
+                    double v2m3 = v2 / 60.0;       
+
+                    if (v1m3 > v2m3) Console.WriteLine("1 л/с больше");
+                    else if (v2m3 > v1m3) Console.WriteLine("10^-3 м³/мин больше");
+                    else Console.WriteLine("Равны");
+                    break;
+
+                case 21:
+                    Console.WriteLine("Введите площадь круга и квадрата:");
+                    double Sc = double.Parse(Console.ReadLine());
+                    double Ss = double.Parse(Console.ReadLine());
+
+                    double r21 = Math.Sqrt(Sc / Math.PI);
+                    double a21 = Math.Sqrt(Ss);
+
+                    if (2 * r21 <= a21) Console.WriteLine("Круг уместится в квадрат");
+                    else Console.WriteLine("Круг не уместится в квадрат");
+
+                    if (a21 <= 2 * r21 / Math.Sqrt(2)) Console.WriteLine("Квадрат уместится в круг");
+                    else Console.WriteLine("Квадрат не уместится в круг");
+                    break;
+
+                case 22:
+                    Console.WriteLine("Введите массу и объем 1-го тела:");
+                    double m1 = double.Parse(Console.ReadLine());
+                    double V1 = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите массу и объем 2-го тела:");
+                    double m2 = double.Parse(Console.ReadLine());
+                    double V2 = double.Parse(Console.ReadLine());
+
+                    double ro1 = m1 / V1;
+                    double ro2 = m2 / V2;
+
+                    if (ro1 > ro2) Console.WriteLine("Первое тело плотнее");
+                    else if (ro2 > ro1) Console.WriteLine("Второе тело плотнее");
+                    else Console.WriteLine("Одинаковая плотность");
+                    break;
+
+                case 23:
+                    Console.WriteLine("Введите скорость в км/ч:");
+                    double v23a = double.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите скорость в м/с:");
+                    double v23b = double.Parse(Console.ReadLine());
+
+                    double v23a_ms = v23a * 1000.0 / 3600.0;
+
+                    if (v23a_ms > v23b) Console.WriteLine("Км/ч больше");
+                    else if (v23b > v23a_ms) Console.WriteLine("М/с больше");
+                    else Console.WriteLine("Они равны");
+                    break;
+
+                case 24:
+                    Console.WriteLine("Введите сторону треугольника a:");
+                    double a24 = double.Parse(Console.ReadLine());
+
+                    double r_in = a24 * Math.Sqrt(3) / 6;
+                    double r_circ = a24 * Math.Sqrt(3) / 3;
+
+                    Console.WriteLine("Введите радиус круга:");
+                    double r24 = double.Parse(Console.ReadLine());
+
+                    if (r24 <= r_in) Console.WriteLine("Круг уместится в треугольник");
+                    else Console.WriteLine("Круг не уместится в треугольник");
+
+                    if (r24 >= r_circ) Console.WriteLine("Треугольник уместится в круг");
+                    else Console.WriteLine("Треугольник не уместится в круг");
+                    break;
+
+                case 25:
+                    Console.WriteLine("Введите сопротивление и напряжение первого участка:");
+                    double R25a = double.Parse(Console.ReadLine());
+                    double U25a = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Введите сопротивление и напряжение второго участка:");
+                    double R25b = double.Parse(Console.ReadLine());
+                    double U25b = double.Parse(Console.ReadLine());
+
+                    double I1 = U25a / R25a;
+                    double I2 = U25b / R25b;
+
+                    if (I1 < I2) Console.WriteLine("Первый участок имеет меньший ток");
+                    else if (I2 < I1) Console.WriteLine("Второй участок имеет меньший ток");
+                    else Console.WriteLine("Токи равны");
+                    break;
+
+                case 26:
+                    double G = 6.7e-8; 
+                    double mv = 4.86e27; // г
+                    double rv = 6175 * 100000.0; 
+                    double ms = 5.68e29;
+                    double rs = 57750 * 100000.0;
+
+                    double gv = G * mv / (rv * rv);
+                    double gs = G * ms / (rs * rs);
+
+                    if (gv > gs) Console.WriteLine("У Венеры больше g");
+                    else Console.WriteLine("У Сатурна больше g");
+                    break;
+
+                case 27:
+                    Console.WriteLine("Введите время (часы 0–23):");
+                    int h27 = int.Parse(Console.ReadLine());
+
+                    if (h27 >= 0 && h27 < 12) Console.WriteLine("pm");
+                    else if (h27 >= 12 && h27 < 24) Console.WriteLine("am");
+                    else Console.WriteLine("Некорректное время");
+                    break;
+
+                case 28:
+                    Console.WriteLine("Введите долготу и широту:");
+                    double lon = double.Parse(Console.ReadLine());
+                    double lat = double.Parse(Console.ReadLine());
+
+                    if (lon > 0) Console.WriteLine("Восточное полушарие");
+                    else if (lon < 0) Console.WriteLine("Западное полушарие");
+                    else Console.WriteLine("На нулевом меридиане");
+
+                    if (lat > 0) Console.WriteLine("Северное полушарие");
+                    else if (lat < 0) Console.WriteLine("Южное полушарие");
+                    else Console.WriteLine("На экваторе");
+                    break;
+
+                case 29:
+                    double sirius = 8.14e12;
+                    double parsec = 3.259 * 9.461e12;
+                    double arcturus = 103 * parsec;
+
+                    if (sirius > arcturus) Console.WriteLine("Сириус дальше");
+                    else Console.WriteLine("Арктур дальше");
+                    break;
+
+                case 30:
+                    Console.WriteLine("Введите число:");
+                    int n30 = int.Parse(Console.ReadLine());
+
+                    if (n30 % 2 == 0) Console.WriteLine("Четное");
+                    else if (n30 % 10 == 7) Console.WriteLine("Оканчивается на 7");
+                    else Console.WriteLine("Не подходит");
+                    break;
+
+                default:
+                    Console.WriteLine("Нет такой задачи!");
+                    break;
+            }
+        }
+    }
+}
