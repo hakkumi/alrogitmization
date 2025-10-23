@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 1:
+                    int[] array = new int[14];
+                    Console.WriteLine("Введите 14 целых чисел:");
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        Console.Write($"Элемент {i + 1}: ");
+                        array[i] = int.Parse(Console.ReadLine());
+                    }
+                    int evenCount = 0;
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        if (array[i] % 2 == 0)
+                        {
+                            evenCount++;
+                        }
+                    }
+                    Console.WriteLine("всего четных чисел - ", evenCount);
+                    break;
+                case 2:
+                    int[] array1 = new int[12];
+                    Console.WriteLine("введите 12 целых чисел:");
+                    for (int i = 0; i<array1.Length; i++)
+                    {
+                        Console.Write($"элемент {i + 1}: ");
+                        array1[i] = int.Parse(Console.ReadLine());
+                    }
+                    int[] arrayAriphmetic = array1;
+                    double average = arrayAriphmetic.Average();
+                    Console.WriteLine("среднее арифметическое: ", average);
+                    Console.WriteLine(average);
+                    break;
+
+                case 3:
+                    int[] array2 = new int[11];
+                    Console.WriteLine("введите 11 чисел: ");
+                    for (int i = 0;)
+                    break;
+            }
+        }
+    }
+}
