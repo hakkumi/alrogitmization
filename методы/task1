@@ -1,0 +1,2630 @@
+using System;
+namespace MethodsTasks
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Тестирование методов
+            Console.WriteLine("Задача 1: Сумма 5 и 3 = " + Task1(5, 3));
+            Console.WriteLine("Задача 2: Сумма 10 и 7 = " + Task2(10, 7));
+            Console.WriteLine("Задача 3: Максимум из 1, 5, 3 = " + Task3(1, 5, 3));
+            Console.WriteLine("Задача 4: Число 4 четное? " + Task4(4));
+            Console.WriteLine("Задача 5: Число 7 четное? " + Task5(7));
+            Console.WriteLine("Задача 6: Число 10 четное? " + Task6(10));
+            Console.WriteLine("Задача 7: Сумма 8 и 2 = " + Task7(8, 2));
+            Console.WriteLine("Задача 8: Числа от 1 до 3:");
+            Task8(1, 3);
+            Console.WriteLine("Задача 9: Сумма 15 и 25 = " + Task9(15, 25));
+            Console.WriteLine("Задача 10: Числа от 5 до 7:");
+            Task10(5, 7);
+            Console.WriteLine("Задача 11: Факториал 5 = " + Task11(5));
+            Console.WriteLine("Задача 12: Сумма 20 и 30 = " + Task12(20, 30));
+            Console.WriteLine("Задача 13: Сумма -3 и 8 = " + Task13(-3, 8));
+            Console.WriteLine("Задача 14: Сумма 0 и 0 = " + Task14(0, 0));
+            Console.WriteLine("Задача 15: Число 15 четное? " + Task15(15));
+            Console.WriteLine("Задача 16: Число 0 четное? " + Task16(0));
+            Console.WriteLine("Задача 17: Числа от 10 до 12:");
+            Task17(10, 12);
+            Console.WriteLine("Задача 18: Числа от -2 до 2:");
+            Task18(-2, 2);
+            Console.WriteLine("Задача 19: Сумма 33 и 67 = " + Task19(33, 67));
+            Console.WriteLine("Задача 20: Числа от 100 до 102:");
+            Task20(100, 102);
+            Console.WriteLine("Задача 21: Квадрат числа 6 = " + Task21(6));
+            Console.WriteLine("Задача 22: Строка 'radar' палиндром? " + Task22("radar"));
+            Console.WriteLine("Задача 22: Строка 'hello' палиндром? " + Task22("hello"));
+
+            int value23 = 10;
+            Console.WriteLine("Задача 23: До вызова: value = " + value23);
+            Task23(ref value23);
+            Console.WriteLine("Задача 23: После вызова: value = " + value23);
+
+            Console.WriteLine("Задача 24: Квадрат числа 9 = " + Task24(9));
+
+            int value25 = 5;
+            Console.WriteLine("Задача 25: До вызова: value = " + value25);
+            Task25(ref value25);
+            Console.WriteLine("Задача 25: После вызова: value = " + value25);
+
+            Console.WriteLine("Задача 26: Строка 'A man a plan a canal Panama' палиндром? " + Task26("A man a plan a canal Panama"));
+
+            Console.WriteLine("Задача 27 (функция): Сумма 7 и 3 = " + Task27_Function(7, 3));
+            Console.Write("Задача 27 (процедура): ");
+            Task27_Procedure(7, 3);
+
+            Console.Write("Задача 28: ");
+            Task28();
+
+            Console.WriteLine("Задача 29: Квадрат числа 8 = " + Task29(8));
+
+            int value30 = 4;
+            Console.WriteLine("Задача 30: До вызова: value = " + value30);
+            Task30(ref value30);
+            Console.WriteLine("Задача 30: После вызова: value = " + value30);
+
+            Console.WriteLine("Задача 31 (функция): Площадь круга радиусом 5 = " + Task31_Function_CircleArea(5));
+            Console.Write("Задача 31 (процедура): ");
+            Task31_Procedure_PrintCircleArea(5);
+
+            Console.WriteLine("Задача 32 (функция): Максимум из 7 и 12 = " + Task32_Function_Max(7, 12));
+            Console.Write("Задача 32 (процедура): ");
+            Task32_Procedure_PrintMax(7, 12);
+
+            Console.WriteLine("Задача 33: Квадрат числа 11 = " + Task33(11));
+            Console.WriteLine("Задача 34: Квадрат числа 7 = " + Task34(7));
+
+            Console.WriteLine("Задача 35 (функция): Reverse 'hello' = " + Task35_Function_Reverse("hello"));
+            Console.Write("Задача 35 (процедура): ");
+            Task35_Procedure_PrintReverse("hello");
+
+            Console.Write("Задача 36: ");
+            Task36();
+
+            Console.Write("Задача 37: ");
+            Task37();
+
+            int value38 = 15;
+            Console.WriteLine("Задача 38: До вызова: value = " + value38);
+            Task38(ref value38);
+            Console.WriteLine("Задача 38: После вызова: value = " + value38);
+
+            Console.Write("Задача 39: ");
+            Task39();
+
+            Console.WriteLine("Задача 40 (функция): Число 17 простое? " + Task40_Function_IsPrime(17));
+            Console.Write("Задача 40 (процедура): ");
+            Task40_Procedure_CheckPrime(17);
+
+            Console.WriteLine("Задача 41 (функция): Факториал 6 = " + Task41_Function_Factorial(6));
+            Console.Write("Задача 41 (процедура): ");
+            Task41_Procedure_PrintFactorial(6);
+
+            Console.WriteLine("Задача 42: Строка 'madam' палиндром? " + Task42("madam"));
+            Console.WriteLine("Задача 42: Строка 'world' палиндром? " + Task42("world"));
+
+            Console.WriteLine("Задача 43 (функция): 20°C в Фаренгейтах = " + Task43_Function_CelsiusToFahrenheit(20));
+            Console.Write("Задача 43 (процедура): ");
+            Task43_Procedure_ConvertTemperature(20);
+
+            Console.Write("Задача 44: ");
+            Task44();
+
+            int value45 = 3;
+            Console.WriteLine("Задача 45: До вызова: value = " + value45);
+            Task45(ref value45);
+            Console.WriteLine("Задача 45: После вызова: value = " + value45);
+
+            int[] array46 = { 3, 1, 4, 1, 5, 9 };
+            Console.WriteLine("Задача 46: Минимальный элемент в массиве [3,1,4,1,5,9] = " + Task46(array46));
+
+            int[] array47 = { 1, 2, 3, 4, 5 };
+            Console.WriteLine("Задача 47: Среднее значение массива [1,2,3,4,5] = " + Task47(array47));
+
+            int[] array48 = { 10, 20, 30 };
+            int[] copy48 = Task48(array48);
+            Console.WriteLine("Задача 48: Копия массива [10,20,30] = [" + string.Join(", ", copy48) + "]");
+
+            double[] array49 = { 1.5, 2.5, 3.5 };
+            Console.WriteLine("Задача 49: Среднее значение массива [1.5,2.5,3.5] = " + Task49(array49));
+
+            double[] array50 = { 3.2, 1.8, 4.5, 1.1 };
+            Console.WriteLine("Задача 50: Минимальный элемент в массиве [3.2,1.8,4.5,1.1] = " + Task50(array50));
+
+            Console.WriteLine("Задача 51: Длина строки 'Hello World' = " + Task51("Hello World"));
+
+            int[] array52 = { 7, 3, 9, 2, 8 };
+            Console.WriteLine("Задача 52: Минимальный элемент в массиве [7,3,9,2,8] = " + Task52(array52));
+
+            Console.WriteLine("Задача 53: Длина строки 'Programming' = " + Task53("Programming"));
+
+            int[] array54 = { 5, 2, 8, 1, 9 };
+            Console.WriteLine("Задача 54: Минимальный элемент в массиве [5,2,8,1,9] = " + Task54(array54));
+
+            Console.WriteLine("Задача 55: Сумма двух чисел 4 и 6 = " + Task55(4, 6));
+            Console.WriteLine("Задача 55: Сумма трех чисел 1, 2 и 3 = " + Task55(1, 2, 3));
+
+            decimal[] array56 = { 1.1m, 2.2m, 3.3m };
+            Console.WriteLine("Задача 56: Среднее значение массива [1.1,2.2,3.3] = " + Task56(array56));
+
+            float[] array57 = { 1.0f, 2.0f, 3.0f, 4.0f };
+            Console.WriteLine("Задача 57: Среднее значение массива [1.0,2.0,3.0,4.0] = " + Task57(array57));
+
+            Console.WriteLine("Задача 58: Сумма двух чисел 2.5 и 3.7 = " + Task58(2.5, 3.7));
+            Console.WriteLine("Задача 58: Сумма трех чисел 1.1, 2.2 и 3.3 = " + Task58(1.1, 2.2, 3.3));
+
+            Console.WriteLine("Задача 59: Длина строки 'CSharp' = " + Task59("CSharp"));
+
+            int[] array60 = { 10, 20, 30, 40 };
+            Console.WriteLine("Задача 60: Среднее значение массива [10,20,30,40] = " + Task60(array60));
+
+            Console.WriteLine("Задача 61: Сумма двух чисел 15.5m и 25.3m = " + Task61(15.5m, 25.3m));
+            Console.WriteLine("Задача 61: Сумма трех чисел 10.1m, 20.2m и 30.3m = " + Task61(10.1m, 20.2m, 30.3m));
+
+            double[] array62 = { 2.0, 4.0, 6.0 };
+            Console.WriteLine("Задача 62: Среднее значение массива [2.0,4.0,6.0] = " + Task62(array62));
+
+            string[] array63 = { "apple", "banana", "cherry" };
+            string[] copy63 = Task63(array63);
+            Console.WriteLine("Задача 63: Копия массива строк = [" + string.Join(", ", copy63) + "]");
+
+            Console.WriteLine("Задача 64: Длина строки 'Visual Studio' = " + Task64("Visual Studio"));
+
+            double[] array65 = { 1.5, 2.5, 3.5 };
+            double[] copy65 = Task65(array65);
+            Console.WriteLine("Задача 65: Копия массива double = [" + string.Join(", ", copy65) + "]");
+
+            Console.WriteLine("Задача 66: Длина строки 'Code' = " + Task66("Code"));
+
+            Console.WriteLine("Задача 67: Сумма двух чисел 100L и 200L = " + Task67(100L, 200L));
+            Console.WriteLine("Задача 67: Сумма трех чисел 50L, 75L и 100L = " + Task67(50L, 75L, 100L));
+
+            Console.WriteLine("Задача 68: Длина строки 'Development' = " + Task68("Development"));
+
+            Console.WriteLine("Задача 69: Длина строки 'Environment' = " + Task69("Environment"));
+
+            Console.WriteLine("Задача 70: Сумма двух чисел 1.5f и 2.5f = " + Task70(1.5f, 2.5f));
+            Console.WriteLine("Задача 70: Сумма трех чисел 0.5f, 1.5f и 2.5f = " + Task70(0.5f, 1.5f, 2.5f));
+
+            Console.WriteLine("Задача 71: Длина строки 'Programming Language' = " + Task71("Programming Language"));
+
+            decimal[] array72 = { 10.0m, 20.0m, 30.0m };
+            Console.WriteLine("Задача 72: Среднее значение массива [10.0,20.0,30.0] = " + Task72(array72));
+
+            int[] array73 = { 6, 2, 9, 1, 7 };
+            Console.WriteLine("Задача 73: Минимальный элемент в массиве [6,2,9,1,7] = " + Task73(array73));
+
+            Console.WriteLine("Задача 74: Сумма двух чисел 25 и 35 = " + Task74(25, 35));
+            Console.WriteLine("Задача 74: Сумма трех чисел 15, 25 и 35 = " + Task74(15, 25, 35));
+
+            double[] array75 = { 2.7, 1.3, 4.8, 0.9 };
+            Console.WriteLine("Задача 75: Минимальный элемент в массиве [2.7,1.3,4.8,0.9] = " + Task75(array75));
+
+            Console.WriteLine("Задача 76: Код ошибки для числа -5 = " + Task76(-5));
+            Console.WriteLine("Задача 76: Код ошибки для числа 500 = " + Task76(500));
+            Console.WriteLine("Задача 76: Код ошибки для числа 50 = " + Task76(50));
+
+            Console.WriteLine("Задача 77: Код ошибки для пустой строки = " + Task77(""));
+            Console.WriteLine("Задача 77: Код ошибки для длинной строки = " + Task77(new string('a', 150)));
+            Console.WriteLine("Задача 77: Код ошибки для нормальной строки = " + Task77("test"));
+
+            Console.WriteLine("Задача 78: Число 9 делится на 3? " + Task78(9));
+            Console.WriteLine("Задача 78: Число 10 делится на 3? " + Task78(10));
+
+            Console.WriteLine("Задача 79: Число 12 делится на 3? " + Task79(12));
+            Console.WriteLine("Задача 79: Число 14 делится на 3? " + Task79(14));
+
+            Console.WriteLine("Задача 80: Результат для -1 = " + Task80(-1));
+            Console.WriteLine("Задача 80: Результат для 0 = " + Task80(0));
+            Console.WriteLine("Задача 80: Результат для 5 = " + Task80(5));
+
+            Console.WriteLine("Задача 81: Результат для пустой строки = " + (Task81("") ?? "null"));
+            Console.WriteLine("Задача 81: Результат для 'hello' = " + Task81("hello"));
+
+            Console.WriteLine("Задача 82: Код ошибки для NaN = " + Task82(double.NaN));
+            Console.WriteLine("Задача 82: Код ошибки для Infinity = " + Task82(double.PositiveInfinity));
+            Console.WriteLine("Задача 82: Код ошибки для нормального числа = " + Task82(5.5));
+
+            int[] array83 = { 10, 20, 30 };
+            Console.WriteLine("Задача 83: Результат для null массива = " + Task83(null, 1));
+            Console.WriteLine("Задача 83: Результат для невалидного индекса = " + Task83(array83, 5));
+            Console.WriteLine("Задача 83: Результат для валидного индекса = " + Task83(array83, 1));
+
+            Console.WriteLine("Задача 84: Оценка 95 = " + Task84(95));
+            Console.WriteLine("Задача 84: Оценка 80 = " + Task84(80));
+            Console.WriteLine("Задача 84: Оценка 65 = " + Task84(65));
+            Console.WriteLine("Задача 84: Оценка 50 = " + Task84(50));
+
+            Console.WriteLine("Задача 85: Код ошибки для даты в будущем = " + Task85(DateTime.Now.AddDays(1)));
+            Console.WriteLine("Задача 85: Код ошибки для старой даты = " + Task85(new DateTime(1800, 1, 1)));
+            Console.WriteLine("Задача 85: Код ошибки для нормальной даты = " + Task85(new DateTime(2000, 1, 1)));
+
+            Console.WriteLine("Задача 86: Результат для (0, 5) = " + Task86(0, 5));
+            Console.WriteLine("Задача 86: Результат для (5, 0) = " + Task86(5, 0));
+            Console.WriteLine("Задача 86: Результат для (5, 5) = " + Task86(5, 5));
+            Console.WriteLine("Задача 86: Результат для (3, 7) = " + Task86(3, 7));
+
+            Console.WriteLine("Задача 87: Квадратный корень из -4 = " + Task87(-4));
+            Console.WriteLine("Задача 87: Квадратный корень из 16 = " + Task87(16));
+
+            Console.WriteLine("Задача 88: Число 15 делится на 3? " + Task88(15));
+            Console.WriteLine("Задача 88: Число 16 делится на 3? " + Task88(16));
+
+            Console.WriteLine("Задача 89: Результат для пустого email = " + Task89(""));
+            Console.WriteLine("Задача 89: Результат для email без @ = " + Task89("email.com"));
+            Console.WriteLine("Задача 89: Результат для валидного email = " + Task89("test@mail.com"));
+
+            Console.WriteLine("Задача 90: Возраст -5 = " + Task90(-5));
+            Console.WriteLine("Задача 90: Возраст 16 = " + Task90(16));
+            Console.WriteLine("Задача 90: Возраст 30 = " + Task90(30));
+            Console.WriteLine("Задача 90: Возраст 70 = " + Task90(70));
+
+            Console.WriteLine("Задача 91: Код ошибки для null = " + Task91(null));
+            Console.WriteLine("Задача 91: Код ошибки для пустой строки = " + Task91(""));
+            Console.WriteLine("Задача 91: Код ошибки для нормального объекта = " + Task91("test"));
+
+            Console.WriteLine("Задача 92: Результат для пустой строки = " + (Task92("")?.ToString() ?? "null"));
+            Console.WriteLine("Задача 92: Результат для 'hello' = " + Task92("hello"));
+
+            Console.WriteLine("Задача 93: Результат деления 10 на 0 = " + Task93(10, 0));
+            Console.WriteLine("Задача 93: Результат деления 15 на 3 = " + Task93(15, 3));
+
+            int[] array94 = null;
+            Console.WriteLine("Задача 94: Код ошибки для null массива = " + Task94(array94));
+            Console.WriteLine("Задача 94: Код ошибки для пустого массива = " + Task94(new int[0]));
+            Console.WriteLine("Задача 94: Код ошибки для большого массива = " + Task94(new int[1500]));
+            Console.WriteLine("Задача 94: Код ошибки для нормального массива = " + Task94(new int[5]));
+
+            Console.WriteLine("Задача 95: Число 18 делится на 3? " + Task95(18));
+            Console.WriteLine("Задача 95: Число 19 делится на 3? " + Task95(19));
+
+            Console.WriteLine("Задача 96: Число 21 делится на 3? " + Task96(21));
+            Console.WriteLine("Задача 96: Число 22 делится на 3? " + Task96(22));
+
+            Console.WriteLine("Задача 97: Число 24 делится на 3? " + Task97(24));
+            Console.WriteLine("Задача 97: Число 25 делится на 3? " + Task97(25));
+
+            Console.WriteLine("Задача 98: Код ошибки для пустого пароля = " + Task98(""));
+            Console.WriteLine("Задача 98: Код ошибки для короткого пароля = " + Task98("12345"));
+            Console.WriteLine("Задача 98: Код ошибки для пароля без цифр = " + Task98("password"));
+            Console.WriteLine("Задача 98: Код ошибки для валидного пароля = " + Task98("pass1234"));
+
+            Console.WriteLine("Задача 99: Результат для (0, 0) = " + Task99(0, 0));
+            Console.WriteLine("Задача 99: Результат для (10, 0) = " + Task99(10, 0));
+            Console.WriteLine("Задача 99: Результат для (15, 3) = " + Task99(15, 3));
+
+            Console.WriteLine("Задача 100: Код ошибки для -10 = " + Task100(-10));
+            Console.WriteLine("Задача 100: Код ошибки для большого числа = " + Task100(int.MaxValue));
+            Console.WriteLine("Задача 100: Код ошибки для нормального числа = " + Task100(50));
+
+            Console.WriteLine("Задача 101: Код ошибки для пустой строки = " + Task101("", 10));
+            Console.WriteLine("Задача 101: Код ошибки для длинной строки = " + Task101("very long string", 5));
+            Console.WriteLine("Задача 101: Код ошибки для валидной строки = " + Task101("test", 10));
+
+            Console.WriteLine("Задача 102: Результат для пустой строки = " + (Task102("")?.ToString() ?? "null"));
+            Console.WriteLine("Задача 102: Результат для '2023-01-01' = " + Task102("2023-01-01"));
+            Console.WriteLine("Задача 102: Результат для невалидной даты = " + (Task102("invalid")?.ToString() ?? "null"));
+
+            Console.WriteLine("Задача 103: Результат для пустой строки = " + (Task103("")?.ToString() ?? "null"));
+            Console.WriteLine("Задача 103: Результат для строки с пробелами = " + (Task103("   ")?.ToString() ?? "null"));
+            Console.WriteLine("Задача 103: Результат для нормальной строки = " + Task103("hello"));
+
+            Console.WriteLine("Задача 104: Авторизация с пустыми данными = " + Task104("", ""));
+            Console.WriteLine("Задача 104: Авторизация с короткими данными = " + Task104("ab", "12345"));
+            Console.WriteLine("Задача 104: Авторизация с правильными данными = " + Task104("admin", "123456"));
+
+            Console.WriteLine("Задача 105: Результат для пустой строки = " + (Task105("")?.Length.ToString() ?? "null"));
+            Console.WriteLine("Задача 105: Результат для '1,2,3' = [" + string.Join(", ", Task105("1,2,3") ?? new int[0]) + "]");
+
+            Console.WriteLine("Задача 106: Деление 10 на 2 = " + Task106(10, 2));
+
+            var task107 = new Task107Class("test");
+            Console.WriteLine("Задача 107: Создание объекта с именем 'test' - успешно");
+
+            Console.WriteLine("Задача 108: Деление 15 на 3 = " + Task108(15, 3));
+            Console.WriteLine("Задача 108: Деление 10 на 0 = " + Task108(10, 0));
+
+            Console.WriteLine("Задача 109: Квадрат числа 5 в диапазоне 0-10 = " + Task109(5, 0, 10));
+
+            Console.WriteLine("Задача 110: Вывод пустого массива:");
+            Task110(new int[0]);
+            Console.WriteLine("Задача 110: Вывод массива [1,2,3]:");
+            Task110(new int[] { 1, 2, 3 });
+
+            Console.WriteLine("Задача 111: Сортировка пустого массива строк:");
+            Task111(new string[0]);
+            Console.WriteLine("Задача 111: Сортировка массива ['c','a','b']:");
+            Task111(new string[] { "c", "a", "b" });
+
+            var task112 = new Task112Class(25);
+            Console.WriteLine("Задача 112: Создание объекта с возрастом 25 - успешно");
+
+            Console.WriteLine("Задача 113: Деление 20.0 на 4.0 = " + Task113(20.0, 4.0));
+            Console.WriteLine("Задача 113: Деление 10.0 на 0.0 = " + Task113(10.0, 0.0));
+
+            Console.WriteLine("Задача 114: Вывод текста 'test':");
+            Task114("test");
+
+            Console.WriteLine("Задача 115: Сумма массива [1,2,3] = " + Task115(new int[] { 1, 2, 3 }));
+
+            Console.WriteLine("Задача 116: ToString объекта 42 = " + Task116(42));
+
+            Console.WriteLine("Задача 117: Сумма пустого массива double:");
+            Task117(new double[0]);
+            Console.WriteLine("Задача 117: Сумма массива [1.5,2.5,3.5]:");
+            Task117(new double[] { 1.5, 2.5, 3.5 });
+
+            Console.WriteLine("Задача 118: Вывод пустого списка:");
+            Task118(new List<string>());
+            Console.WriteLine("Задача 118: Вывод списка ['hello','world']:");
+            Task118(new List<string> { "hello", "world" });
+
+            Console.WriteLine("Задача 119: Деление 15 на 3 = " + Task119(15, 3));
+            Console.WriteLine("Задача 119: Деление 10 на 0 = " + Task119(10, 0));
+
+            var task120 = new Task120Class("test@mail.com");
+            Console.WriteLine("Задача 120: Создание объекта с email 'test@mail.com' - успешно");
+
+            using (var resource = new System.IO.MemoryStream())
+            {
+                Console.WriteLine("Задача 121: Освобождение ресурса:");
+                Task121(resource);
+            }
+
+            Console.WriteLine("Задача 122: Деление 12.5f на 2.5f = " + Task122(12.5f, 2.5f));
+            Console.WriteLine("Задача 122: Деление 10.0f на 0.0f = " + Task122(10.0f, 0.0f));
+
+            Console.WriteLine("Задача 123: Деление 20.0m на 4.0m = " + Task123(20.0m, 4.0m));
+
+            var task124 = new Task124Class(new DateTime(1990, 1, 1));
+            Console.WriteLine("Задача 124: Создание объекта с датой 1990-01-01 - успешно");
+
+            Console.WriteLine("Задача 125: Деление 25.0 на 5.0 = " + Task125(25.0, 5.0));
+            Console.WriteLine("Задача 125: Деление 10.0 на 0.0 = " + Task125(10.0, 0.0));
+
+            var task126 = new Task126Class(42);
+            Console.WriteLine("Задача 126: Создание объекта со значением 42 - успешно");
+
+            Console.WriteLine("Задача 127: Число 15 в диапазоне 0-20 = " + Task127(15, 0, 20));
+            Console.WriteLine("Задача 127: Число -5 в диапазоне 0-20 = " + Task127(-5, 0, 20));
+            Console.WriteLine("Задача 127: Число 25 в диапазоне 0-20 = " + Task127(25, 0, 20));
+
+            var task128 = new Task128Class("john_doe");
+            Console.WriteLine("Задача 128: Создание объекта с именем 'john_doe' - успешно");
+
+            Console.WriteLine("Задача 129: Объединение массива ['a','b','c'] = " + Task129(new string[] { "a", "b", "c" }));
+
+            Console.WriteLine("Задача 130: Количество элементов в списке [1,2,3,4,5] = " + Task130(new List<int> { 1, 2, 3, 4, 5 }));
+
+            var task131 = new Task131Class(99.99m);
+            Console.WriteLine("Задача 131: Создание объекта с ценой 99.99 - успешно");
+
+            Console.WriteLine("Задача 132: Возраст 20 совершеннолетний? " + Task132(20));
+            Console.WriteLine("Задача 132: Возраст 16 совершеннолетний? " + Task132(16));
+            Console.WriteLine("Задача 132: Возраст -5 совершеннолетний? " + Task132(-5));
+
+            Console.WriteLine("Задача 133: Значение 7.5 в диапазоне 0-10 = " + Task133(7.5, 0, 10));
+            Console.WriteLine("Задача 133: Значение -2.5 в диапазоне 0-10 = " + Task133(-2.5, 0, 10));
+            Console.WriteLine("Задача 133: Значение 12.5 в диапазоне 0-10 = " + Task133(12.5, 0, 10));
+
+            Console.WriteLine("Задача 134: Выполнение действия:");
+            Task134(() => Console.WriteLine("    Действие выполнено"));
+
+            Console.WriteLine("Задача 135: Индекс 2 при длине массива 5 = " + Task135(2, 5));
+            Console.WriteLine("Задача 135: Индекс -1 при длине массива 5 = " + Task135(-1, 5));
+            Console.WriteLine("Задача 135: Индекс 10 при длине массива 5 = " + Task135(10, 5));
+
+            Console.WriteLine("Задача 136: Деление 20 на 4 = " + Task136(20, 4));
+            Console.WriteLine("Задача 136: Деление 10 на 0 = " + Task136(10, 0));
+
+            Console.WriteLine("Задача 137: Вывод пустого массива объектов:");
+            Task137(new object[0]);
+            Console.WriteLine("Задача 137: Вывод массива объектов [1,'test',3.14]:");
+            Task137(new object[] { 1, "test", 3.14 });
+
+            Console.WriteLine("Задача 138: Деление 30.0 на 6.0 = " + Task138(30.0, 6.0));
+            Console.WriteLine("Задача 138: Деление 10.0 на 0.0 = " + Task138(10.0, 0.0));
+
+            Console.WriteLine("Задача 139: Проверка объекта 'test' = " + Task139("test"));
+
+            Console.WriteLine("Задача 140: Оценка 95 = " + Task140(95));
+            Console.WriteLine("Задача 140: Оценка 75 = " + Task140(75));
+            Console.WriteLine("Задача 140: Оценка 65 = " + Task140(65));
+            Console.WriteLine("Задача 140: Оценка 55 = " + Task140(55));
+            Console.WriteLine("Задача 140: Оценка -10 = " + Task140(-10));
+
+            string error141;
+            Console.WriteLine("Задача 141: Проверка суммы -5: " + Task141(-5, out error141) + ", ошибка: " + error141);
+            Console.WriteLine("Задача 141: Проверка суммы 100: " + Task141(100, out error141) + ", ошибка: " + error141);
+
+            Console.WriteLine("Задача 142: Проверка возраста 16: " + Task142(16));
+            Console.WriteLine("Задача 142: Проверка возраста 25: " + Task142(25));
+            Console.WriteLine("Задача 142: Проверка возраста -5: " + Task142(-5));
+
+            Console.WriteLine("Задача 143: Снятие 50 с баланса 100 = " + Task143(100, 50));
+            Console.WriteLine("Задача 143: Снятие -10 с баланса 100 = " + Task143(100, -10));
+            Console.WriteLine("Задача 143: Снятие 150 с баланса 100 = " + Task143(100, 150));
+
+            Console.WriteLine("Задача 144: Проверка пароля 'password123':");
+            Task144("password123");
+
+            string[] existingEmails = { "user1@mail.com", "user2@mail.com" };
+            Console.WriteLine("Задача 145: Регистрация нового email: " + Task145("newuser@mail.com", existingEmails));
+            Console.WriteLine("Задача 145: Регистрация существующего email: " + Task145("user1@mail.com", existingEmails));
+            Console.WriteLine("Задача 145: Регистрация невалидного email: " + Task145("invalid", existingEmails));
+
+            Console.WriteLine("Задача 146: Расчет стоимости 5 товаров по 10.5 = " + Task146(10.5m, 5));
+
+            Console.WriteLine("Задача 147: Проверка суммы 100: " + Task147(100));
+            Console.WriteLine("Задача 147: Проверка суммы -50: " + Task147(-50));
+
+            Console.WriteLine("Задача 148: Проверка возраста 20 при минимуме 18: " + Task148(20, 18));
+            Console.WriteLine("Задача 148: Проверка возраста 16 при минимуме 18: " + Task148(16, 18));
+
+            Console.WriteLine("Задача 149: Доступ для возраста 20: " + Task149(20));
+            Console.WriteLine("Задача 149: Доступ для возраста 16: " + Task149(16));
+
+            HashSet<string> registeredEmails = new HashSet<string> { "existing@mail.com" };
+            Console.WriteLine("Задача 150: Регистрация нового email: " + Task150("new@mail.com", registeredEmails));
+            Console.WriteLine("Задача 150: Регистрация существующего email: " + Task150("existing@mail.com", registeredEmails));
+            Console.WriteLine("Задача 150: Регистрация невалидного email: " + Task150("invalid", registeredEmails));
+
+            Console.WriteLine("Задача 151: Проверка возраста 25:");
+            Task151(25);
+            Console.WriteLine("Задача 151: Проверка возраста 18:");
+            Task151(18);
+
+            Console.WriteLine("Задача 152: Стоимость 100 со скидкой 20% = " + Task152(100, 20));
+            Console.WriteLine("Задача 152: Стоимость -50 со скидкой 10% = " + Task152(-50, 10));
+            Console.WriteLine("Задача 152: Стоимость 100 со скидкой 150% = " + Task152(100, 150));
+
+            Console.WriteLine("Задача 153: Проверка суммы 500 при лимите 1000: " + Task153(500, 1000));
+            Console.WriteLine("Задача 153: Проверка суммы -100 при лимите 1000: " + Task153(-100, 1000));
+            Console.WriteLine("Задача 153: Проверка суммы 1500 при лимите 1000: " + Task153(1500, 1000));
+
+            Console.WriteLine("Задача 154: Авторизация с правильными данными: " + Task154("admin", "admin123"));
+
+            Console.WriteLine("Задача 155: Сумма положительных чисел 5 и 7 = " + Task155(5, 7));
+            Console.WriteLine("Задача 155: Сумма с отрицательным числом -3 и 8 = " + Task155(-3, 8));
+
+            List<string> existingUsers = new List<string> { "user1", "user2" };
+            Console.WriteLine("Задача 156: Регистрация нового пользователя: " + Task156("newuser", existingUsers));
+            Console.WriteLine("Задача 156: Регистрация существующего пользователя: " + Task156("user1", existingUsers));
+
+            Console.WriteLine("Задача 157: Парсинг даты '2023-12-25' = " + Task157("2023-12-25"));
+
+            Console.WriteLine("Задача 158: Проверка пароля 'ValidPass123':");
+            Task158("ValidPass123");
+
+            Console.WriteLine("Задача 159: Проверка пароля 'ShortPass': " + Task159("ShortPass"));
+            Console.WriteLine("Задача 159: Проверка пароля 'VeryLongPassword123': " + Task159("VeryLongPassword123"));
+
+            string[] usedEmails = { "used@mail.com" };
+            Console.WriteLine("Задача 160: Регистрация нового email:");
+            Task160("new@mail.com", usedEmails);
+
+            IEnumerable<string> existingEmails161 = new List<string> { "test@mail.com" };
+            Console.WriteLine("Задача 161: Регистрация нового email: " + Task161("new@mail.com", existingEmails161));
+            Console.WriteLine("Задача 161: Регистрация существующего email: " + Task161("test@mail.com", existingEmails161));
+            Console.WriteLine("Задача 161: Регистрация невалидного email: " + Task161("invalid", existingEmails161));
+
+            Console.WriteLine("Задача 162: Проверка возраста 20 при требуемом 18: " + Task162(20, 18));
+            Console.WriteLine("Задача 162: Проверка возраста 16 при требуемом 18: " + Task162(16, 18));
+            Console.WriteLine("Задача 162: Проверка возраста -5 при требуемом 18: " + Task162(-5, 18));
+
+            Console.WriteLine("Задача 163: Проверка пароля null:");
+            Task163(null);
+            Console.WriteLine("Задача 163: Проверка короткого пароля:");
+            Task163("short");
+
+            Console.WriteLine("Задача 164: Проверка возраста 20: " + Task164(20));
+            Console.WriteLine("Задача 164: Проверка возраста 15: " + Task164(15));
+
+            Console.WriteLine("Задача 165: Корректировка суммы -100 = " + Task165(-100));
+            Console.WriteLine("Задача 165: Корректировка суммы 500 = " + Task165(500));
+
+            Console.WriteLine("Задача 166: Проверка пароля 'password': " + Task166("password"));
+            Console.WriteLine("Задача 166: Проверка пароля 'short': " + Task166("short"));
+
+            Console.WriteLine("Задача 167: Проверка пароля 'ValidPass':");
+            Task167("ValidPass");
+
+            Console.WriteLine("Задача 168: Парсинг даты '2023-12-25' = " + Task168("2023-12-25"));
+
+            Console.WriteLine("Задача 169: Проверка пароля 'password': " + Task169("password"));
+            Console.WriteLine("Задача 169: Проверка пароля '': " + Task169(""));
+
+            Console.WriteLine("Задача 170: Корректировка значения -50 = " + Task170(-50));
+            Console.WriteLine("Задача 170: Корректировка значения 100 = " + Task170(100));
+
+            int quotient171, remainder171;
+            Task171(10, 3, out quotient171, out remainder171);
+            Console.WriteLine("Задача 171: Деление 10 на 3: частное = " + quotient171 + ", остаток = " + remainder171);
+
+            int result172, remainder172;
+            bool success172 = Task172(20, 4, out result172, out remainder172);
+            Console.WriteLine("Задача 172: Деление 20 на 4: успех = " + success172 + ", результат = " + result172 + ", остаток = " + remainder172);
+            success172 = Task172(15, 0, out result172, out remainder172);
+            Console.WriteLine("Задача 172: Деление 15 на 0: успех = " + success172 + ", результат = " + result172 + ", остаток = " + remainder172);
+
+            int[] array173;
+            Task173(5, out array173);
+            Console.WriteLine("Задача 173: Массив квадратов 5 элементов = [" + string.Join(", ", array173) + "]");
+
+            int number174;
+            bool success174 = Task174("42", out number174);
+            Console.WriteLine("Задача 174: Парсинг '42': успех = " + success174 + ", число = " + number174);
+            success174 = Task174("abc", out number174);
+            Console.WriteLine("Задача 174: Парсинг 'abc': успех = " + success174 + ", число = " + number174);
+
+            double quotient175, remainder175;
+            Task175(15.0, 4.0, out quotient175, out remainder175);
+            Console.WriteLine("Задача 175: Деление 15.0 на 4.0: частное = " + quotient175 + ", остаток = " + remainder175);
+
+            int value176 = 10;
+            Console.WriteLine("Задача 176: До инкремента: value = " + value176);
+            Task176(ref value176);
+            Console.WriteLine("Задача 176: После инкремента: value = " + value176);
+
+            string reversed177;
+            bool success177 = Task177("hello", out reversed177);
+            Console.WriteLine("Задача 177: Reverse 'hello': успех = " + success177 + ", результат = " + reversed177);
+            success177 = Task177("", out reversed177);
+            Console.WriteLine("Задача 177: Reverse '': успех = " + success177 + ", результат = " + (reversed177 ?? "null"));
+
+            int dayOfWeek178;
+            bool success178 = Task178(DateTime.Now, out dayOfWeek178);
+            Console.WriteLine("Задача 178: День недели сегодня: успех = " + success178 + ", день = " + dayOfWeek178);
+
+            int[] squares179;
+            Task179(1, 5, out squares179);
+            Console.WriteLine("Задача 179: Квадраты чисел от 1 до 5 = [" + string.Join(", ", squares179) + "]");
+
+            int quot180, rem180;
+            Task180(17, 5, out quot180, out rem180);
+            Console.WriteLine("Задача 180: Деление 17 на 5: частное = " + quot180 + ", остаток = " + rem180);
+
+            DateTime date181;
+            bool success181 = Task181("2023-01-15", out date181);
+            Console.WriteLine("Задача 181: Парсинг даты '2023-01-15': успех = " + success181 + ", дата = " + date181.ToShortDateString());
+            success181 = Task181("invalid", out date181);
+            Console.WriteLine("Задача 181: Парсинг даты 'invalid': успех = " + success181 + ", дата = " + date181.ToShortDateString());
+
+            decimal quotient182, remainder182;
+            bool success182 = Task182(25.0m, 4.0m, out quotient182, out remainder182);
+            Console.WriteLine("Задача 182: Деление 25.0 на 4.0: успех = " + success182 + ", частное = " + quotient182 + ", остаток = " + remainder182);
+
+            double value183 = 100.0;
+            Console.WriteLine("Задача 183: До увеличения: value = " + value183);
+            Task183(ref value183);
+            Console.WriteLine("Задача 183: После увеличения на 10%: value = " + value183);
+
+            string[] names184;
+            Task184(out names184);
+            Console.WriteLine("Задача 184: Массив имен = [" + string.Join(", ", names184) + "]");
+
+            int number185 = 50;
+            Console.WriteLine("Задача 185: До увеличения: number = " + number185);
+            Task185(ref number185, 25);
+            Console.WriteLine("Задача 185: После увеличения на 25: number = " + number185);
+
+            long[] factorials186;
+            Task186(6, out factorials186);
+            Console.WriteLine("Задача 186: Факториалы от 1 до 6 = [" + string.Join(", ", factorials186) + "]");
+
+            int[] testArray187 = { 3, 1, 4, 1, 5, 9 };
+            int min187, max187;
+            bool success187 = Task187(testArray187, out min187, out max187);
+            Console.WriteLine("Задача 187: Минимум и максимум массива: успех = " + success187 + ", min = " + min187 + ", max = " + max187);
+
+            double[] results188;
+            Task188(out results188);
+            Console.WriteLine("Задача 188: Случайные числа = [" + string.Join(", ", results188.Select(r => r.ToString("F2"))) + "]");
+
+            int a189 = 5, b189 = 10;
+            Console.WriteLine("Задача 189: До обмена: a = " + a189 + ", b = " + b189);
+            Task189(ref a189, ref b189);
+            Console.WriteLine("Задача 189: После обмена: a = " + a189 + ", b = " + b189);
+
+            long quotient190, remainder190;
+            Task190(100L, 7L, out quotient190, out remainder190);
+            Console.WriteLine("Задача 190: Деление 100L на 7L: частное = " + quotient190 + ", остаток = " + remainder190);
+
+            double result191;
+            bool success191 = Task191(22, 7, out result191);
+            Console.WriteLine("Задача 191: Деление 22 на 7: успех = " + success191 + ", результат = " + result191.ToString("F2"));
+
+            string str1_192 = "first", str2_192 = "second";
+            Console.WriteLine("Задача 192: До обмена: str1 = " + str1_192 + ", str2 = " + str2_192);
+            Task192(ref str1_192, ref str2_192);
+            Console.WriteLine("Задача 192: После обмена: str1 = " + str1_192 + ", str2 = " + str2_192);
+
+            decimal value193 = 200.0m;
+            Console.WriteLine("Задача 193: До увеличения: value = " + value193);
+            Task193(ref value193);
+            Console.WriteLine("Задача 193: После увеличения на 5%: value = " + value193);
+
+            bool bool1_194 = true, bool2_194 = false;
+            Console.WriteLine("Задача 194: До обмена: bool1 = " + bool1_194 + ", bool2 = " + bool2_194);
+            Task194(ref bool1_194, ref bool2_194);
+            Console.WriteLine("Задача 194: После обмена: bool1 = " + bool1_194 + ", bool2 = " + bool2_194);
+
+            int wordCount195;
+            bool success195 = Task195("Hello world from CSharp", out wordCount195);
+            Console.WriteLine("Задача 195: Подсчет слов: успех = " + success195 + ", количество слов = " + wordCount195);
+
+            double[] numbers196 = { 1.0, 2.0, 3.0, 4.0, 5.0 };
+            double average196;
+            bool success196 = Task196(numbers196, out average196);
+            Console.WriteLine("Задача 196: Среднее значение: успех = " + success196 + ", среднее = " + average196);
+
+            float quotient197, remainder197;
+            Task197(15.0f, 4.0f, out quotient197, out remainder197);
+            Console.WriteLine("Задача 197: Деление 15.0f на 4.0f: частное = " + quotient197 + ", остаток = " + remainder197);
+
+            bool isLeapYear198;
+            bool success198 = Task198(2024, out isLeapYear198);
+            Console.WriteLine("Задача 198: Проверка 2024 года: успех = " + success198 + ", високосный = " + isLeapYear198);
+
+            int divisionResult199;
+            bool success199 = Task199(30, 6, out divisionResult199);
+            Console.WriteLine("Задача 199: Деление 30 на 6: успех = " + success199 + ", результат = " + divisionResult199);
+
+            object obj1_200 = "first object", obj2_200 = "second object";
+            Console.WriteLine("Задача 200: До обмена: obj1 = " + obj1_200 + ", obj2 = " + obj2_200);
+            Task200(ref obj1_200, ref obj2_200);
+            Console.WriteLine("Задача 200: После обмена: obj1 = " + obj1_200 + ", obj2 = " + obj2_200);
+        }
+
+        // ЗАДАЧА 1: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task1(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 2: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task2(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 3: Создайте метод, возвращающий максимальное из трех переданных чисел.
+        static int Task3(int a, int b, int c)
+        {
+            int max = a;
+            if (b > max) max = b;
+            if (c > max) max = c;
+            return max;
+        }
+
+        // ЗАДАЧА 4: Реализуйте метод для определения, является ли число четным.
+        static bool Task4(int n)
+        {
+            return n % 2 == 0;
+        }
+
+        // ЗАДАЧА 5: Реализуйте метод для определения, является ли число четным.
+        static bool Task5(int n)
+        {
+            return n % 2 == 0;
+        }
+
+        // ЗАДАЧА 6: Реализуйте метод для определения, является ли число четным.
+        static bool Task6(int n)
+        {
+            return n % 2 == 0;
+        }
+
+        // ЗАДАЧА 7: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task7(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 8: Напишите метод, выводящий все числа в диапазоне от a до b.
+        static void Task8(int a, int b)
+        {
+            for (int i = a; i <= b; i++)
+                Console.WriteLine(i);
+        }
+
+        // ЗАДАЧА 9: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task9(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 10: Напишите метод, выводящий все числа в диапазоне от a до b.
+        static void Task10(int a, int b)
+        {
+            for (int i = a; i <= b; i++)
+                Console.WriteLine(i);
+        }
+
+        // ЗАДАЧА 11: Опишите метод для расчета факториала числа.
+        static long Task11(int n)
+        {
+            if (n < 0) return -1; // ошибка
+            long result = 1;
+            for (int i = 2; i <= n; i++)
+                result *= i;
+            return result;
+        }
+
+        // ЗАДАЧА 12: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task12(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 13: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task13(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 14: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task14(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 15: Реализуйте метод для определения, является ли число четным.
+        static bool Task15(int n)
+        {
+            return n % 2 == 0;
+        }
+
+        // ЗАДАЧА 16: Реализуйте метод для определения, является ли число четным.
+        static bool Task16(int n)
+        {
+            return n % 2 == 0;
+        }
+
+        // ЗАДАЧА 17: Напишите метод, выводящий все числа в диапазоне от a до b.
+        static void Task17(int a, int b)
+        {
+            for (int i = a; i <= b; i++)
+                Console.WriteLine(i);
+        }
+
+        // ЗАДАЧА 18: Напишите метод, выводящий все числа в диапазоне от a до b.
+        static void Task18(int a, int b)
+        {
+            for (int i = a; i <= b; i++)
+                Console.WriteLine(i);
+        }
+
+        // ЗАДАЧА 19: Напишите метод, принимающий два целых числа и возвращающий их сумму.
+        static int Task19(int a, int b)
+        {
+            return a + b;
+        }
+
+        // ЗАДАЧА 20: Напишите метод, выводящий все числа в диапазоне от a до b.
+        static void Task20(int a, int b)
+        {
+            for (int i = a; i <= b; i++)
+                Console.WriteLine(i);
+        }
+
+        // ЗАДАЧА 21: Опишите функцию, возвращающую квадрат числа.
+        static int Task21(int x)
+        {
+            return x * x;
+        }
+
+        // ЗАДАЧА 22: Реализуйте функцию, проверяющую, является ли строка палиндромом.
+        static bool Task22(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return false;
+
+            int left = 0;
+            int right = str.Length - 1;
+
+            while (left < right)
+            {
+                if (str[left] != str[right])
+                    return false;
+                left++;
+                right--;
+            }
+            return true;
+        }
+
+        // ЗАДАЧА 23: Создайте процедуру, изменяющую значение переменной через ref.
+        static void Task23(ref int value)
+        {
+            value *= 2;
+        }
+
+        // ЗАДАЧА 24: Опишите функцию, возвращающую квадрат числа.
+        static int Task24(int x)
+        {
+            return x * x;
+        }
+
+        // ЗАДАЧА 25: Создайте процедуру, изменяющую значение переменной через ref.
+        static void Task25(ref int value)
+        {
+            value += 10;
+        }
+
+        // ЗАДАЧА 26: Реализуйте функцию, проверяющую, является ли строка палиндромом.
+        static bool Task26(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return false;
+
+            string cleanStr = str.ToLower().Replace(" ", "");
+            int length = cleanStr.Length;
+
+            for (int i = 0; i < length / 2; i++)
+            {
+                if (cleanStr[i] != cleanStr[length - 1 - i])
+                    return false;
+            }
+            return true;
+        }
+
+        // ЗАДАЧА 27: Объясните различие между процедурой и функцией на примере (в коде).
+        // Функция возвращает значение
+        static int Task27_Function(int a, int b)
+        {
+            return a + b;
+        }
+
+        // Процедура не возвращает значение, но выполняет действие
+        static void Task27_Procedure(int a, int b)
+        {
+            Console.WriteLine($"{a} + {b} = {a + b}");
+        }
+
+        // ЗАДАЧА 28: Реализуйте процедуру, которая выводит 'Hello, World!' на экран.
+        static void Task28()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+
+        // ЗАДАЧА 29: Опишите функцию, возвращающую квадрат числа.
+        static int Task29(int x)
+        {
+            return x * x;
+        }
+
+        // ЗАДАЧА 30: Создайте процедуру, изменяющую значение переменной через ref.
+        static void Task30(ref int value)
+        {
+            value = value * value;
+        }
+
+        // ЗАДАЧА 31: Объясните различие между процедурой и функцией на примере (в коде).
+        // Функция - возвращает результат вычисления
+        static double Task31_Function_CircleArea(double radius)
+        {
+            return Math.PI * radius * radius;
+        }
+
+        // Процедура - выполняет действие без возврата значения
+        static void Task31_Procedure_PrintCircleArea(double radius)
+        {
+            double area = Math.PI * radius * radius;
+            Console.WriteLine($"Площадь круга с радиусом {radius} = {area:F2}");
+        }
+
+        // ЗАДАЧА 32: Объясните различие между процедурой и функцией на примере (в коде).
+        static int Task32_Function_Max(int a, int b)
+        {
+            return a > b ? a : b;
+        }
+
+        static void Task32_Procedure_PrintMax(int a, int b)
+        {
+            int max = a > b ? a : b;
+            Console.WriteLine($"Максимум из {a} и {b} = {max}");
+        }
+
+        // ЗАДАЧА 33: Опишите функцию, возвращающую квадрат числа.
+        static int Task33(int x)
+        {
+            return x * x;
+        }
+
+        // ЗАДАЧА 34: Опишите функцию, возвращающую квадрат числа.
+        static int Task34(int x)
+        {
+            return (int)Math.Pow(x, 2);
+        }
+
+        // ЗАДАЧА 35: Объясните различие между процедурой и функцией на примере (в коде).
+        static string Task35_Function_Reverse(string str)
+        {
+            char[] chars = str.ToCharArray();
+            Array.Reverse(chars);
+            return new string(chars);
+        }
+
+        static void Task35_Procedure_PrintReverse(string str)
+        {
+            char[] chars = str.ToCharArray();
+            Array.Reverse(chars);
+            Console.WriteLine($"Обратная строка: {new string(chars)}");
+        }
+
+        // ЗАДАЧА 36: Реализуйте процедуру, которая выводит 'Hello, World!' на экран.
+        static void Task36()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+
+        // ЗАДАЧА 37: Реализуйте процедуру, которая выводит 'Hello, World!' на экран.
+        static void Task37()
+        {
+            Console.Write("Hello, ");
+            Console.WriteLine("World!");
+        }
+
+        // ЗАДАЧА 38: Создайте процедуру, изменяющую значение переменной через ref.
+        static void Task38(ref int value)
+        {
+            value = -value;
+        }
+
+        // ЗАДАЧА 39: Реализуйте процедуру, которая выводит 'Hello, World!' на экран.
+        static void Task39()
+        {
+            string message = "Hello, World!";
+            Console.WriteLine(message);
+        }
+
+        // ЗАДАЧА 40: Объясните различие между процедурой и функцией на примере (в коде).
+        static bool Task40_Function_IsPrime(int number)
+        {
+            if (number < 2) return false;
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0) return false;
+            }
+            return true;
+        }
+
+        static void Task40_Procedure_CheckPrime(int number)
+        {
+            bool isPrime = Task40_Function_IsPrime(number);
+            Console.WriteLine($"Число {number} " + (isPrime ? "простое" : "составное"));
+        }
+
+        // ЗАДАЧА 41: Объясните различие между процедурой и функцией на примере (в коде).
+        static int Task41_Function_Factorial(int n)
+        {
+            if (n < 0) return -1;
+            int result = 1;
+            for (int i = 2; i <= n; i++)
+                result *= i;
+            return result;
+        }
+
+        static void Task41_Procedure_PrintFactorial(int n)
+        {
+            int factorial = Task41_Function_Factorial(n);
+            if (factorial == -1)
+                Console.WriteLine("Ошибка: отрицательное число");
+            else
+                Console.WriteLine($"{n}! = {factorial}");
+        }
+
+        // ЗАДАЧА 42: Реализуйте функцию, проверяющую, является ли строка палиндромом.
+        static bool Task42(string str)
+        {
+            if (string.IsNullOrEmpty(str)) return true;
+
+            str = str.ToLower().Replace(" ", "").Replace(",", "").Replace(".", "");
+            for (int i = 0; i < str.Length / 2; i++)
+            {
+                if (str[i] != str[str.Length - 1 - i])
+                    return false;
+            }
+            return true;
+        }
+
+        // ЗАДАЧА 43: Объясните различие между процедурой и функцией на примере (в коде).
+        static double Task43_Function_CelsiusToFahrenheit(double celsius)
+        {
+            return celsius * 9 / 5 + 32;
+        }
+
+        static void Task43_Procedure_ConvertTemperature(double celsius)
+        {
+            double fahrenheit = Task43_Function_CelsiusToFahrenheit(celsius);
+            Console.WriteLine($"{celsius}°C = {fahrenheit}°F");
+        }
+
+        // ЗАДАЧА 44: Реализуйте процедуру, которая выводит 'Hello, World!' на экран.
+        static void Task44()
+        {
+            Console.WriteLine("Hello, World!");
+        }
+
+        // ЗАДАЧА 45: Создайте процедуру, изменяющую значение переменной через ref.
+        static void Task45(ref int value)
+        {
+            value = value * 3 + 1;
+        }
+
+        // ЗАДАЧА 46: Реализуйте метод для поиска минимального элемента в массиве.
+        static int Task46(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                throw new ArgumentException("Массив не может быть пустым");
+
+            int min = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                    min = array[i];
+            }
+            return min;
+        }
+
+        // ЗАДАЧА 47: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static double Task47(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                return 0;
+
+            double sum = 0;
+            foreach (int num in array)
+                sum += num;
+
+            return sum / array.Length;
+        }
+
+        // ЗАДАЧА 48: Опишите метод для копирования массива.
+        static int[] Task48(int[] source)
+        {
+            if (source == null) return null;
+
+            int[] copy = new int[source.Length];
+            for (int i = 0; i < source.Length; i++)
+                copy[i] = source[i];
+
+            return copy;
+        }
+
+        // ЗАДАЧА 49: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static double Task49(double[] array)
+        {
+            if (array == null || array.Length == 0)
+                return 0;
+
+            double sum = 0;
+            foreach (double num in array)
+                sum += num;
+
+            return sum / array.Length;
+        }
+
+        // ЗАДАЧА 50: Реализуйте метод для поиска минимального элемента в массиве.
+        static double Task50(double[] array)
+        {
+            if (array == null || array.Length == 0)
+                throw new ArgumentException("Массив не может быть пустым");
+
+            double min = array[0];
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                    min = array[i];
+            }
+            return min;
+        }
+
+        // Продолжение следует для задач 51-200...
+        // [Здесь будут методы для задач 51-200]
+
+        // ЗАДАЧА 51: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task51(string str)
+        {
+            return string.IsNullOrEmpty(str) ? 0 : str.Length;
+        }
+
+        // ЗАДАЧА 52: Реализуйте метод для поиска минимального элемента в массиве.
+        static int Task52(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                return int.MaxValue;
+
+            int min = array[0];
+            foreach (int num in array)
+                if (num < min) min = num;
+            return min;
+        }
+
+        // ЗАДАЧА 53: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task53(string str)
+        {
+            return str?.Length ?? 0;
+        }
+
+        // ЗАДАЧА 54: Реализуйте метод для поиска минимального элемента в массиве.
+        static int Task54(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                throw new ArgumentException("Массив пустой");
+
+            return Task52(array); // Используем реализацию из задачи 52
+        }
+
+        // ЗАДАЧА 55: Создайте перегруженный метод для сложения двух и трех чисел.
+        static int Task55(int a, int b)
+        {
+            return a + b;
+        }
+
+        static int Task55(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
+        // ЗАДАЧА 56: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static decimal Task56(decimal[] array)
+        {
+            if (array == null || array.Length == 0)
+                return 0;
+
+            decimal sum = 0;
+            foreach (decimal num in array)
+                sum += num;
+
+            return sum / array.Length;
+        }
+
+        // ЗАДАЧА 57: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static float Task57(float[] array)
+        {
+            if (array == null || array.Length == 0)
+                return 0;
+
+            float sum = 0;
+            foreach (float num in array)
+                sum += num;
+
+            return sum / array.Length;
+        }
+
+        // ЗАДАЧА 58: Создайте перегруженный метод для сложения двух и трех чисел.
+        static double Task58(double a, double b)
+        {
+            return a + b;
+        }
+
+        static double Task58(double a, double b, double c)
+        {
+            return a + b + c;
+        }
+
+        // ЗАДАЧА 59: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task59(string input)
+        {
+            return input == null ? 0 : input.Length;
+        }
+
+        // ЗАДАЧА 60: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static double Task60(int[] array)
+        {
+            return Task47(array); // Используем реализацию из задачи 47
+        }
+
+        // ЗАДАЧА 61: Создайте перегруженный метод для сложения двух и трех чисел.
+        static decimal Task61(decimal a, decimal b)
+        {
+            return a + b;
+        }
+
+        static decimal Task61(decimal a, decimal b, decimal c)
+        {
+            return a + b + c;
+        }
+
+        // ЗАДАЧА 62: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static double Task62(double[] array)
+        {
+            return Task49(array); // Используем реализацию из задачи 49
+        }
+
+        // ЗАДАЧА 63: Опишите метод для копирования массива.
+        static string[] Task63(string[] source)
+        {
+            if (source == null) return null;
+
+            string[] copy = new string[source.Length];
+            for (int i = 0; i < source.Length; i++)
+                copy[i] = source[i];
+
+            return copy;
+        }
+
+        // ЗАДАЧА 64: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task64(string text)
+        {
+            return text?.Length ?? 0;
+        }
+
+        // ЗАДАЧА 65: Опишите метод для копирования массива.
+        static double[] Task65(double[] source)
+        {
+            if (source == null) return null;
+
+            double[] copy = new double[source.Length];
+            Array.Copy(source, copy, source.Length);
+            return copy;
+        }
+
+        // ЗАДАЧА 66: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task66(string str)
+        {
+            return string.IsNullOrEmpty(str) ? 0 : str.Length;
+        }
+
+        // ЗАДАЧА 67: Создайте перегруженный метод для сложения двух и трех чисел.
+        static long Task67(long a, long b)
+        {
+            return a + b;
+        }
+
+        static long Task67(long a, long b, long c)
+        {
+            return a + b + c;
+        }
+
+        // ЗАДАЧА 68: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task68(string inputString)
+        {
+            return inputString == null ? 0 : inputString.Length;
+        }
+
+        // ЗАДАЧА 69: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task69(string s)
+        {
+            return s?.Length ?? 0;
+        }
+
+        // ЗАДАЧА 70: Создайте перегруженный метод для сложения двух и трех чисел.
+        static float Task70(float a, float b)
+        {
+            return a + b;
+        }
+
+        static float Task70(float a, float b, float c)
+        {
+            return a + b + c;
+        }
+
+        // ЗАДАЧА 71: Сделайте метод, принимающий строку и возвращающий ее длину.
+        static int Task71(string str)
+        {
+            if (str == null) return 0;
+            int count = 0;
+            foreach (char c in str) count++;
+            return count;
+        }
+
+        // ЗАДАЧА 72: Реализуйте метод, принимающий массив и вычисляющий его среднее значение.
+        static decimal Task72(decimal[] numbers)
+        {
+            if (numbers == null || numbers.Length == 0)
+                return 0;
+
+            decimal total = 0;
+            foreach (decimal num in numbers)
+                total += num;
+
+            return total / numbers.Length;
+        }
+
+        // ЗАДАЧА 73: Реализуйте метод для поиска минимального элемента в массиве.
+        static int Task73(int[] arr)
+        {
+            if (arr == null || arr.Length == 0)
+                throw new ArgumentException("Массив пустой");
+
+            int minimum = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < minimum)
+                    minimum = arr[i];
+            }
+            return minimum;
+        }
+
+        // ЗАДАЧА 74: Создайте перегруженный метод для сложения двух и трех чисел.
+        static int Task74(int x, int y)
+        {
+            return x + y;
+        }
+
+        static int Task74(int x, int y, int z)
+        {
+            return x + y + z;
+        }
+
+        // ЗАДАЧА 75: Реализуйте метод для поиска минимального элемента в массиве.
+        static double Task75(double[] array)
+        {
+            return Task50(array); // Используем реализацию из задачи 50
+        }
+
+        // ЗАДАЧА 76: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task76(int number)
+        {
+            if (number < 0)
+                return -1; // код ошибки для отрицательного числа
+            if (number > 1000)
+                return -2; // код ошибки для слишком большого числа
+
+            return 0; // успех
+        }
+
+        // ЗАДАЧА 77: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task77(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return -1; // код ошибки для пустой строки
+            if (input.Length > 100)
+                return -2; // код ошибки для слишком длинной строки
+
+            return 0; // успех
+        }
+
+        // ЗАДАЧА 78: Реализуйте функцию, проверяющую делимость на 3 и возвращающую true/false.
+        static bool Task78(int number)
+        {
+            return number % 3 == 0;
+        }
+
+        // ЗАДАЧА 79: Реализуйте функцию, проверяющую делимость на 3 и возвращающую true/false.
+        static bool Task79(int n)
+        {
+            return n % 3 == 0;
+        }
+
+        // ЗАДАЧА 80: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static string Task80(int number)
+        {
+            if (number < 0)
+                return "Ошибка: отрицательное число";
+
+            if (number == 0)
+                return "Ноль";
+
+            // Дальнейшие вычисления только для положительных чисел
+            return $"Положительное число: {number}";
+        }
+
+        // ЗАДАЧА 81: Создайте функцию, возвращающую null, если строка пустая.
+        static string Task81(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return null;
+
+            return str.ToUpper();
+        }
+
+        // ЗАДАЧА 82: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task82(double value)
+        {
+            if (double.IsNaN(value) || double.IsInfinity(value))
+                return -1; // код ошибки для невалидного double
+
+            return 0; // успех
+        }
+
+        // ЗАДАЧА 83: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static int Task83(int[] array, int index)
+        {
+            if (array == null)
+                return -1; // выход при null массиве
+
+            if (index < 0 || index >= array.Length)
+                return -2; // выход при невалидном индексе
+
+            return array[index]; // возврат значения
+        }
+
+        // ЗАДАЧА 84: Реализуйте функцию с несколькими return, которые завершат выполнение в зависимости от условий.
+        static string Task84(int score)
+        {
+            if (score >= 90) return "Отлично";
+            if (score >= 75) return "Хорошо";
+            if (score >= 60) return "Удовлетворительно";
+            return "Неудовлетворительно";
+        }
+
+        // ЗАДАЧА 85: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task85(DateTime date)
+        {
+            if (date > DateTime.Now)
+                return -1; // код ошибки для даты в будущем
+
+            if (date.Year < 1900)
+                return -2; // код ошибки для слишком старой даты
+
+            return 0; // успех
+        }
+
+        // ЗАДАЧА 86: Реализуйте функцию с несколькими return, которые завершат выполнение в зависимости от условий.
+        static int Task86(int a, int b)
+        {
+            if (a == 0) return 0;
+            if (b == 0) return a;
+            if (a == b) return a;
+
+            return Math.Min(a, b);
+        }
+
+        // ЗАДАЧА 87: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static double Task87(double x)
+        {
+            if (x < 0)
+                return double.NaN; // выход для отрицательного числа
+
+            return Math.Sqrt(x);
+        }
+
+        // ЗАДАЧА 88: Реализуйте функцию, проверяющую делимость на 3 и возвращающую true/false.
+        static bool Task88(int number)
+        {
+            return number % 3 == 0;
+        }
+
+        // ЗАДАЧА 89: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static string Task89(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return "Ошибка: email пустой";
+
+            if (!email.Contains("@"))
+                return "Ошибка: неверный формат email";
+
+            return "Email валиден";
+        }
+
+        // ЗАДАЧА 90: Реализуйте функцию с несколькими return, которые завершат выполнение в зависимости от условий.
+        static string Task90(int age)
+        {
+            if (age < 0) return "Неверный возраст";
+            if (age < 18) return "Ребенок";
+            if (age < 65) return "Взрослый";
+            return "Пенсионер";
+        }
+
+        // ЗАДАЧА 91: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task91(object obj)
+        {
+            if (obj == null)
+                return -1; // код ошибки для null
+
+            if (obj is string str && string.IsNullOrEmpty(str))
+                return -2; // код ошибки для пустой строки
+
+            return 0; // успех
+        }
+
+        // ЗАДАЧА 92: Создайте функцию, возвращающую null, если строка пустая.
+        static int? Task92(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return null;
+
+            return str.Length;
+        }
+
+        // ЗАДАЧА 93: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static int Task93(int a, int b)
+        {
+            if (b == 0)
+                return int.MinValue; // выход при делении на ноль
+
+            return a / b;
+        }
+
+        // ЗАДАЧА 94: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task94(int[] array)
+        {
+            if (array == null)
+                return -1;
+            if (array.Length == 0)
+                return -2;
+            if (array.Length > 1000)
+                return -3;
+
+            return 0;
+        }
+
+        // ЗАДАЧА 95: Реализуйте функцию, проверяющую делимость на 3 и возвращающую true/false.
+        static bool Task95(int n)
+        {
+            return n % 3 == 0;
+        }
+
+        // ЗАДАЧА 96: Реализуйте функцию, проверяющую делимость на 3 и возвращающую true/false.
+        static bool Task96(int number)
+        {
+            return number % 3 == 0;
+        }
+
+        // ЗАДАЧА 97: Реализуйте функцию, проверяющую делимость на 3 и возвращающую true/false.
+        static bool Task97(int x)
+        {
+            return x % 3 == 0;
+        }
+
+        // ЗАДАЧА 98: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task98(string password)
+        {
+            if (string.IsNullOrEmpty(password))
+                return -1;
+            if (password.Length < 8)
+                return -2;
+            if (!password.Any(char.IsDigit))
+                return -3;
+
+            return 0;
+        }
+
+        // ЗАДАЧА 99: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static double Task99(double a, double b)
+        {
+            if (a == 0 && b == 0)
+                return double.NaN;
+
+            if (b == 0)
+                return double.PositiveInfinity;
+
+            return a / b;
+        }
+
+        // ЗАДАЧА 100: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task100(int number)
+        {
+            if (number < 0) return -1;
+            if (number > int.MaxValue / 2) return -2;
+            return 0;
+        }
+
+        // ЗАДАЧА 101: Создайте функцию, возвращающую код ошибки, если входные данные некорректны.
+        static int Task101(string input, int maxLength)
+        {
+            if (string.IsNullOrEmpty(input)) return -1;
+            if (input.Length > maxLength) return -2;
+            return 0;
+        }
+
+        // ЗАДАЧА 102: Создайте функцию, возвращающую null, если строка пустая.
+        static DateTime? Task102(string dateStr)
+        {
+            if (string.IsNullOrEmpty(dateStr))
+                return null;
+
+            if (DateTime.TryParse(dateStr, out DateTime result))
+                return result;
+
+            return null;
+        }
+
+        // ЗАДАЧА 103: Создайте функцию, возвращающую null, если строка пустая.
+        static object Task103(string str)
+        {
+            if (string.IsNullOrWhiteSpace(str))
+                return null;
+
+            return str.Trim();
+        }
+
+        // ЗАДАЧА 104: Опишите функцию, использующую return для выхода из метода до конца выполнения.
+        static bool Task104(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                return false;
+
+            if (username.Length < 3 || password.Length < 6)
+                return false;
+
+            // Дальнейшая проверка логина и пароля
+            return username == "admin" && password == "123456";
+        }
+
+        // ЗАДАЧА 105: Создайте функцию, возвращающую null, если строка пустая.
+        static int[] Task105(string numbersStr)
+        {
+            if (string.IsNullOrEmpty(numbersStr))
+                return null;
+
+            string[] parts = numbersStr.Split(',');
+            int[] result = new int[parts.Length];
+            for (int i = 0; i < parts.Length; i++)
+            {
+                if (int.TryParse(parts[i], out int num))
+                    result[i] = num;
+            }
+            return result;
+        }
+
+        // ЗАДАЧА 106: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static double Task106(double a, double b)
+        {
+            if (b == 0)
+                throw new DivideByZeroException("Деление на ноль недопустимо");
+
+            return a / b;
+        }
+
+        // ЗАДАЧА 107: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task107Class
+        {
+            public string Name { get; }
+
+            public Task107Class(string name)
+            {
+                if (string.IsNullOrEmpty(name))
+                    throw new ArgumentException("Имя не может быть пустым");
+
+                Name = name;
+            }
+        }
+
+        // ЗАДАЧА 108: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static decimal Task108(decimal dividend, decimal divisor)
+        {
+            if (divisor == 0)
+                return 0; // Возвращаем 0 вместо исключения
+
+            return dividend / divisor;
+        }
+
+        // ЗАДАЧА 109: Используйте Guard Clause для проверки диапазона допустимых значений.
+        static int Task109(int value, int min, int max)
+        {
+            if (value < min || value > max)
+                throw new ArgumentOutOfRangeException($"Значение должно быть между {min} и {max}");
+
+            return value * value;
+        }
+
+        // ЗАДАЧА 110: Добавьте Guard Clause, которая сразу возвращает void, если массив пустой.
+        static void Task110(int[] array)
+        {
+            if (array == null || array.Length == 0)
+                return;
+
+            foreach (int num in array)
+                Console.WriteLine(num);
+        }
+
+        // ЗАДАЧА 111: Добавьте Guard Clause, которая сразу возвращает void, если массив пустой.
+        static void Task111(string[] strings)
+        {
+            if (strings == null || strings.Length == 0)
+                return;
+
+            Array.Sort(strings);
+            foreach (string str in strings)
+                Console.WriteLine(str);
+        }
+
+        // ЗАДАЧА 112: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task112Class
+        {
+            public int Age { get; }
+
+            public Task112Class(int age)
+            {
+                if (age < 0 || age > 150)
+                    throw new ArgumentException("Возраст должен быть от 0 до 150");
+
+                Age = age;
+            }
+        }
+
+        // ЗАДАЧА 113: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static double Task113(double numerator, double denominator)
+        {
+            if (Math.Abs(denominator) < double.Epsilon)
+                return double.NaN;
+
+            return numerator / denominator;
+        }
+
+        // ЗАДАЧА 114: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static void Task114(string text)
+        {
+            if (text == null)
+                throw new ArgumentNullException(nameof(text));
+
+            Console.WriteLine($"Текст: {text}");
+        }
+
+        // ЗАДАЧА 115: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static int Task115(int[] numbers)
+        {
+            if (numbers == null)
+                throw new ArgumentNullException(nameof(numbers));
+
+            return numbers.Sum();
+        }
+
+        // ЗАДАЧА 116: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static string Task116(object obj)
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            return obj.ToString();
+        }
+
+        // ЗАДАЧА 117: Добавьте Guard Clause, которая сразу возвращает void, если массив пустой.
+        static void Task117(double[] array)
+        {
+            if (array == null || array.Length == 0)
+                return;
+
+            double sum = 0;
+            foreach (double num in array)
+                sum += num;
+            Console.WriteLine($"Сумма: {sum}");
+        }
+
+        // ЗАДАЧА 118: Добавьте Guard Clause, которая сразу возвращает void, если массив пустой.
+        static void Task118(List<string> list)
+        {
+            if (list == null || list.Count == 0)
+                return;
+
+            foreach (string item in list)
+                Console.WriteLine(item.ToUpper());
+        }
+
+        // ЗАДАЧА 119: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static int Task119(int a, int b)
+        {
+            if (b == 0)
+            {
+                Console.WriteLine("Ошибка: деление на ноль");
+                return 0;
+            }
+
+            return a / b;
+        }
+
+        // ЗАДАЧА 120: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task120Class
+        {
+            public string Email { get; }
+
+            public Task120Class(string email)
+            {
+                if (string.IsNullOrEmpty(email))
+                    throw new ArgumentException("Email не может быть пустым");
+                if (!email.Contains("@"))
+                    throw new ArgumentException("Неверный формат email");
+
+                Email = email;
+            }
+        }
+
+        // ЗАДАЧА 121: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static void Task121(IDisposable resource)
+        {
+            if (resource == null)
+                throw new ArgumentNullException(nameof(resource));
+
+            resource.Dispose();
+        }
+
+        // ЗАДАЧА 122: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static float Task122(float x, float y)
+        {
+            if (y == 0f)
+                return float.NaN;
+
+            return x / y;
+        }
+
+        // ЗАДАЧА 123: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static decimal Task123(decimal a, decimal b)
+        {
+            if (b == 0)
+                throw new DivideByZeroException();
+
+            return a / b;
+        }
+
+        // ЗАДАЧА 124: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task124Class
+        {
+            public DateTime BirthDate { get; }
+
+            public Task124Class(DateTime birthDate)
+            {
+                if (birthDate > DateTime.Now)
+                    throw new ArgumentException("Дата рождения не может быть в будущем");
+                if (birthDate.Year < 1900)
+                    throw new ArgumentException("Слишком старая дата рождения");
+
+                BirthDate = birthDate;
+            }
+        }
+
+        // ЗАДАЧА 125: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static double Task125(double dividend, double divisor)
+        {
+            if (divisor == 0)
+                return double.PositiveInfinity;
+
+            return dividend / divisor;
+        }
+
+        // ЗАДАЧА 126: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task126Class
+        {
+            public int Value { get; }
+
+            public Task126Class(int value)
+            {
+                if (value < 0)
+                    throw new ArgumentOutOfRangeException(nameof(value), "Значение не может быть отрицательным");
+
+                Value = value;
+            }
+        }
+
+        // ЗАДАЧА 127: Используйте Guard Clause для проверки диапазона допустимых значений.
+        static int Task127(int number, int min, int max)
+        {
+            if (number < min)
+                return min;
+            if (number > max)
+                return max;
+
+            return number;
+        }
+
+        // ЗАДАЧА 128: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task128Class
+        {
+            public string Username { get; }
+
+            public Task128Class(string username)
+            {
+                if (string.IsNullOrWhiteSpace(username))
+                    throw new ArgumentException("Имя пользователя не может быть пустым");
+                if (username.Length < 3)
+                    throw new ArgumentException("Имя пользователя должно содержать至少 3 символа");
+
+                Username = username;
+            }
+        }
+
+        // ЗАДАЧА 129: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static string Task129(string[] array)
+        {
+            if (array == null)
+                throw new ArgumentNullException(nameof(array));
+
+            return string.Join(", ", array);
+        }
+
+        // ЗАДАЧА 130: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static int Task130(List<int> list)
+        {
+            if (list == null)
+                throw new ArgumentNullException(nameof(list));
+
+            return list.Count;
+        }
+
+        // ЗАДАЧА 131: Реализуйте Guard Clause в конструкторе класса для обязательного параметра.
+        class Task131Class
+        {
+            public decimal Price { get; }
+
+            public Task131Class(decimal price)
+            {
+                if (price < 0)
+                    throw new ArgumentException("Цена не может быть отрицательной");
+                if (price > 1000000)
+                    throw new ArgumentException("Слишком высокая цена");
+
+                Price = price;
+            }
+        }
+
+        // ЗАДАЧА 132: Используйте Guard Clause для проверки диапазона допустимых значений.
+        static bool Task132(int age)
+        {
+            if (age < 0 || age > 150)
+                return false;
+
+            return age >= 18;
+        }
+
+        // ЗАДАЧА 133: Используйте Guard Clause для проверки диапазона допустимых значений.
+        static double Task133(double value, double min, double max)
+        {
+            if (value < min)
+                value = min;
+            if (value > max)
+                value = max;
+
+            return value;
+        }
+
+        // ЗАДАЧА 134: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static void Task134(Action action)
+        {
+            if (action == null)
+                throw new ArgumentNullException(nameof(action));
+
+            action();
+        }
+
+        // ЗАДАЧА 135: Используйте Guard Clause для проверки диапазона допустимых значений.
+        static int Task135(int index, int arrayLength)
+        {
+            if (index < 0)
+                return 0;
+            if (index >= arrayLength)
+                return arrayLength - 1;
+
+            return index;
+        }
+
+        // ЗАДАЧА 136: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static int Task136(int a, int b)
+        {
+            if (b == 0)
+            {
+                Console.WriteLine("Предупреждение: попытка деления на ноль");
+                return int.MaxValue;
+            }
+
+            return a / b;
+        }
+
+        // ЗАДАЧА 137: Добавьте Guard Clause, которая сразу возвращает void, если массив пустой.
+        static void Task137(object[] objects)
+        {
+            if (objects == null || objects.Length == 0)
+                return;
+
+            for (int i = 0; i < objects.Length; i++)
+                Console.WriteLine($"{i}: {objects[i]}");
+        }
+
+        // ЗАДАЧА 138: Напишите функцию с Guard Clause для проверки деления на ноль.
+        static double Task138(double x, double y)
+        {
+            if (Math.Abs(y) < 0.000001)
+                return 0;
+
+            return x / y;
+        }
+
+        // ЗАДАЧА 139: Реализуйте метод с Guard Clause, выбрасывающей исключение при аргументе null.
+        static T Task139<T>(T obj) where T : class
+        {
+            if (obj == null)
+                throw new ArgumentNullException(nameof(obj));
+
+            return obj;
+        }
+
+        // ЗАДАЧА 140: Используйте Guard Clause для проверки диапазона допустимых значений.
+        static string Task140(int score)
+        {
+            if (score < 0) return "Невалидный счет";
+            if (score < 60) return "F";
+            if (score < 70) return "D";
+            if (score < 80) return "C";
+            if (score < 90) return "B";
+            return "A";
+        }
+
+        // ЗАДАЧА 141: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static bool Task141(decimal amount, out string error)
+        {
+            error = null;
+
+            if (amount < 0)
+            {
+                error = "Сумма не может быть отрицательной";
+                return false;
+            }
+
+            return true;
+        }
+
+        // ЗАДАЧА 142: В функции проверки возраста использовать Guard Clause — если меньше минимума, return.
+        static string Task142(int age)
+        {
+            if (age < 0)
+                return "Неверный возраст";
+
+            if (age < 18)
+                return "Несовершеннолетний";
+
+            return "Совершеннолетний";
+        }
+
+        // ЗАДАЧА 143: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static int Task143(int balance, int withdrawal)
+        {
+            if (withdrawal < 0)
+                return -1; // ошибка: отрицательная сумма снятия
+
+            if (balance < withdrawal)
+                return -2; // ошибка: недостаточно средств
+
+            return balance - withdrawal;
+        }
+
+        // ЗАДАЧА 144: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static void Task144(string password)
+        {
+            if (string.IsNullOrEmpty(password))
+                throw new ArgumentException("Пароль не может быть пустым");
+
+            if (password.Length < 8)
+                throw new ArgumentException("Пароль должен содержать至少 8 символов");
+
+            // Дальнейшая логика авторизации
+            Console.WriteLine("Пароль принят");
+        }
+
+        // ЗАДАЧА 145: Добавьте Guard Clause в функцию регистрации, проверяющую уникальность email.
+        static bool Task145(string email, string[] existingEmails)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+
+            if (!email.Contains("@"))
+                return false;
+
+            if (existingEmails.Contains(email))
+                return false;
+
+            return true;
+        }
+
+        // ЗАДАЧА 146: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static decimal Task146(decimal price, int quantity)
+        {
+            if (price < 0)
+                throw new ArgumentException("Цена не может быть отрицательной");
+
+            if (quantity < 0)
+                throw new ArgumentException("Количество не может быть отрицательным");
+
+            return price * quantity;
+        }
+
+        // ЗАДАЧА 147: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static bool Task147(decimal amount)
+        {
+            if (amount <= 0)
+            {
+                Console.WriteLine("Сумма должна быть положительной");
+                return false;
+            }
+
+            return true;
+        }
+
+        // ЗАДАЧА 148: В функции проверки возраста использовать Guard Clause — если меньше минимума, return.
+        static bool Task148(int age, int minAge)
+        {
+            if (age < minAge)
+                return false;
+
+            return true;
+        }
+
+        // ЗАДАЧА 149: В функции проверки возраста использовать Guard Clause — если меньше минимума, return.
+        static string Task149(int age)
+        {
+            const int MIN_AGE = 18;
+
+            if (age < MIN_AGE)
+                return "Доступ запрещен";
+
+            return "Доступ разрешен";
+        }
+
+        // ЗАДАЧА 150: Добавьте Guard Clause в функцию регистрации, проверяющую уникальность email.
+        static string Task150(string email, HashSet<string> registeredEmails)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return "Email не может быть пустым";
+
+            if (!email.Contains("@") || !email.Contains("."))
+                return "Неверный формат email";
+
+            if (registeredEmails.Contains(email))
+                return "Email уже зарегистрирован";
+
+            return "OK";
+        }
+
+        // ЗАДАЧА 151: В функции проверки возраста использовать Guard Clause — если меньше минимума, return.
+        static void Task151(int age)
+        {
+            if (age < 21)
+            {
+                Console.WriteLine("Недостаточный возраст");
+                return;
+            }
+
+            Console.WriteLine("Доступ разрешен");
+        }
+
+        // ЗАДАЧА 152: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static decimal Task152(decimal total, decimal discount)
+        {
+            if (total < 0)
+                return 0;
+
+            if (discount < 0 || discount > 100)
+                return total;
+
+            return total * (100 - discount) / 100;
+        }
+
+        // ЗАДАЧА 153: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static bool Task153(decimal amount, decimal limit)
+        {
+            if (amount < 0)
+                return false;
+
+            if (amount > limit)
+                return false;
+
+            return true;
+        }
+
+        // ЗАДАЧА 154: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static bool Task154(string username, string password)
+        {
+            if (string.IsNullOrEmpty(username))
+                throw new ArgumentException("Имя пользователя обязательно");
+
+            if (string.IsNullOrEmpty(password) || password.Length < 6)
+                throw new ArgumentException("Пароль должен содержать至少 6 символов");
+
+            return username == "admin" && password == "admin123";
+        }
+
+        // ЗАДАЧА 155: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static int Task155(int a, int b)
+        {
+            if (a < 0 || b < 0)
+                return -1;
+
+            return a + b;
+        }
+
+        // ЗАДАЧА 156: Добавьте Guard Clause в функцию регистрации, проверяющую уникальность email.
+        static bool Task156(string email, List<string> existingUsers)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+
+            email = email.Trim().ToLower();
+
+            if (existingUsers.Any(user => user.ToLower() == email))
+                return false;
+
+            return true;
+        }
+
+        // ЗАДАЧА 157: Сделайте Guard Clause, выбрасывающую исключение при невалидном формате даты.
+        static DateTime Task157(string dateString)
+        {
+            if (string.IsNullOrEmpty(dateString))
+                throw new ArgumentException("Строка даты не может быть пустой");
+
+            if (!DateTime.TryParse(dateString, out DateTime result))
+                throw new FormatException("Неверный формат даты");
+
+            return result;
+        }
+
+        // ЗАДАЧА 158: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static void Task158(string password)
+        {
+            if (password == null)
+                throw new ArgumentNullException(nameof(password));
+
+            if (password.Length < 8)
+                throw new ArgumentException("Пароль слишком короткий");
+
+            if (!password.Any(char.IsDigit))
+                throw new ArgumentException("Пароль должен содержать цифры");
+        }
+
+        // ЗАДАЧА 159: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static bool Task159(string password)
+        {
+            if (password?.Length < 12)
+            {
+                Console.WriteLine("Для безопасности используйте пароль длиной至少 12 символов");
+                return false;
+            }
+
+            return true;
+        }
+
+        // ЗАДАЧА 160: Добавьте Guard Clause в функцию регистрации, проверяющую уникальность email.
+        static void Task160(string email, string[] usedEmails)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                throw new ArgumentException("Email обязателен");
+
+            if (usedEmails.Contains(email))
+                throw new InvalidOperationException("Email уже используется");
+
+            // Регистрация пользователя
+            Console.WriteLine($"Пользователь с email {email} зарегистрирован");
+        }
+
+        // ЗАДАЧА 161: Добавьте Guard Clause в функцию регистрации, проверяющую уникальность email.
+        static bool Task161(string email, IEnumerable<string> existingEmails)
+        {
+            if (!IsValidEmail(email))
+                return false;
+
+            return !existingEmails.Any(e => e.Equals(email, StringComparison.OrdinalIgnoreCase));
+        }
+
+        static bool IsValidEmail(string email)
+        {
+            return !string.IsNullOrEmpty(email) &&
+                   email.Contains("@") &&
+                   email.Contains(".") &&
+                   email.Length > 5;
+        }
+
+        // ЗАДАЧА 162: В функции проверки возраста использовать Guard Clause — если меньше минимума, return.
+        static string Task162(int age, int requiredAge)
+        {
+            if (age < 0) return "Неверный возраст";
+            if (age < requiredAge) return $"Минимальный возраст: {requiredAge}";
+            return "Доступ разрешен";
+        }
+
+        // ЗАДАЧА 163: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static void Task163(string password)
+        {
+            if (password == null)
+                return; // молчаливый выход
+
+            if (password.Length < 10)
+            {
+                Console.WriteLine("Рекомендуется использовать пароль длиной至少 10 символов");
+            }
+        }
+
+        // ЗАДАЧА 164: В функции проверки возраста использовать Guard Clause — если меньше минимума, return.
+        static bool Task164(int age)
+        {
+            const int MIN_AGE = 16;
+            return age >= MIN_AGE;
+        }
+
+        // ЗАДАЧА 165: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static decimal Task165(decimal amount)
+        {
+            return amount < 0 ? 0 : amount;
+        }
+
+        // ЗАДАЧА 166: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static bool Task166(string password)
+        {
+            if (string.IsNullOrEmpty(password) || password.Length < 8)
+                return false;
+
+            return true;
+        }
+
+        // ЗАДАЧА 167: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static void Task167(string password)
+        {
+            if (password?.Length < 6)
+                throw new ArgumentException("Пароль должен содержать至少 6 символов");
+        }
+
+        // ЗАДАЧА 168: Сделайте Guard Clause, выбрасывающую исключение при невалидном формате даты.
+        static DateTime Task168(string dateStr)
+        {
+            if (!DateTime.TryParseExact(dateStr, "yyyy-MM-dd", null, System.Globalization.DateTimeStyles.None, out DateTime result))
+                throw new FormatException("Дата должна быть в формате ГГГГ-ММ-ДД");
+
+            return result;
+        }
+
+        // ЗАДАЧА 169: Реализуйте Guard Clause для метода авторизации — если пароль слишком короткий, выбросить исключение.
+        static bool Task169(string password)
+        {
+            return !string.IsNullOrEmpty(password) && password.Length >= 8;
+        }
+
+        // ЗАДАЧА 170: Реализуйте Guard Clause для метода расчетов — если сумма отрицательная, вернуть ошибку.
+        static int Task170(int value)
+        {
+            return Math.Max(0, value);
+        }
+
+        // ЗАДАЧА 171: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static void Task171(int dividend, int divisor, out int quotient, out int remainder)
+        {
+            quotient = divisor == 0 ? 0 : dividend / divisor;
+            remainder = divisor == 0 ? dividend : dividend % divisor;
+        }
+
+        // ЗАДАЧА 172: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static bool Task172(int a, int b, out int result, out int remainder)
+        {
+            result = 0;
+            remainder = 0;
+
+            if (b == 0)
+                return false;
+
+            result = a / b;
+            remainder = a % b;
+            return true;
+        }
+
+        // ЗАДАЧА 173: Опишите метод, заполняющий массив результатами через out.
+        static void Task173(int size, out int[] result)
+        {
+            result = new int[size];
+            for (int i = 0; i < size; i++)
+                result[i] = i * i;
+        }
+
+        // ЗАДАЧА 174: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task174(string input, out int number)
+        {
+            number = 0;
+            return int.TryParse(input, out number);
+        }
+
+        // ЗАДАЧА 175: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static void Task175(double a, double b, out double quotient, out double remainder)
+        {
+            quotient = b == 0 ? double.NaN : a / b;
+            remainder = b == 0 ? double.NaN : a % b;
+        }
+
+        // ЗАДАЧА 176: Сделайте метод, увеличивающий значение аргумента через ref.
+        static void Task176(ref int value)
+        {
+            value++;
+        }
+
+        // ЗАДАЧА 177: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task177(string text, out string reversed)
+        {
+            reversed = null;
+            if (string.IsNullOrEmpty(text))
+                return false;
+
+            char[] chars = text.ToCharArray();
+            Array.Reverse(chars);
+            reversed = new string(chars);
+            return true;
+        }
+
+        // ЗАДАЧА 178: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task178(DateTime date, out int dayOfWeek)
+        {
+            dayOfWeek = (int)date.DayOfWeek;
+            return true;
+        }
+
+        // ЗАДАЧА 179: Опишите метод, заполняющий массив результатами через out.
+        static void Task179(int start, int count, out int[] squares)
+        {
+            squares = new int[count];
+            for (int i = 0; i < count; i++)
+                squares[i] = (start + i) * (start + i);
+        }
+
+        // ЗАДАЧА 180: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static void Task180(int a, int b, out int quot, out int rem)
+        {
+            quot = b != 0 ? a / b : 0;
+            rem = b != 0 ? a % b : a;
+        }
+
+        // ЗАДАЧА 181: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task181(string input, out DateTime date)
+        {
+            date = DateTime.MinValue;
+            return DateTime.TryParse(input, out date);
+        }
+
+        // ЗАДАЧА 182: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static bool Task182(decimal a, decimal b, out decimal quotient, out decimal remainder)
+        {
+            quotient = 0;
+            remainder = 0;
+
+            if (b == 0)
+                return false;
+
+            quotient = a / b;
+            remainder = a % b;
+            return true;
+        }
+
+        // ЗАДАЧА 183: Сделайте метод, увеличивающий значение аргумента через ref.
+        static void Task183(ref double value)
+        {
+            value *= 1.1; // увеличение на 10%
+        }
+
+        // ЗАДАЧА 184: Опишите метод, заполняющий массив результатами через out.
+        static void Task184(out string[] names)
+        {
+            names = new string[] { "Alice", "Bob", "Charlie", "Diana" };
+        }
+
+        // ЗАДАЧА 185: Сделайте метод, увеличивающий значение аргумента через ref.
+        static void Task185(ref int number, int increment)
+        {
+            number += increment;
+        }
+
+        // ЗАДАЧА 186: Опишите метод, заполняющий массив результатами через out.
+        static void Task186(int n, out long[] factorials)
+        {
+            factorials = new long[n];
+            long fact = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                fact *= i;
+                factorials[i - 1] = fact;
+            }
+        }
+
+        // ЗАДАЧА 187: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task187(int[] array, out int min, out int max)
+        {
+            min = 0;
+            max = 0;
+
+            if (array == null || array.Length == 0)
+                return false;
+
+            min = array.Min();
+            max = array.Max();
+            return true;
+        }
+
+        // ЗАДАЧА 188: Опишите метод, заполняющий массив результатами через out.
+        static void Task188(out double[] results)
+        {
+            results = new double[10];
+            Random rand = new Random();
+            for (int i = 0; i < 10; i++)
+                results[i] = rand.NextDouble() * 100;
+        }
+
+        // ЗАДАЧА 189: Создайте метод, меняющий местами два значения через ref.
+        static void Task189(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        // ЗАДАЧА 190: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static void Task190(long a, long b, out long quotient, out long remainder)
+        {
+            quotient = b == 0 ? 0 : a / b;
+            remainder = b == 0 ? a : a % b;
+        }
+
+        // ЗАДАЧА 191: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static bool Task191(int numerator, int denominator, out double result)
+        {
+            result = 0;
+            if (denominator == 0)
+                return false;
+
+            result = (double)numerator / denominator;
+            return true;
+        }
+
+        // ЗАДАЧА 192: Создайте метод, меняющий местами два значения через ref.
+        static void Task192(ref string str1, ref string str2)
+        {
+            string temp = str1;
+            str1 = str2;
+            str2 = temp;
+        }
+
+        // ЗАДАЧА 193: Сделайте метод, увеличивающий значение аргумента через ref.
+        static void Task193(ref decimal value)
+        {
+            value = value * 1.05m; // увеличение на 5%
+        }
+
+        // ЗАДАЧА 194: Создайте метод, меняющий местами два значения через ref.
+        static void Task194(ref bool a, ref bool b)
+        {
+            bool temp = a;
+            a = b;
+            b = temp;
+        }
+
+        // ЗАДАЧА 195: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task195(string text, out int wordCount)
+        {
+            wordCount = 0;
+            if (string.IsNullOrWhiteSpace(text))
+                return false;
+
+            wordCount = text.Split(new char[] { ' ', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).Length;
+            return true;
+        }
+
+        // ЗАДАЧА 196: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task196(double[] numbers, out double average)
+        {
+            average = 0;
+            if (numbers == null || numbers.Length == 0)
+                return false;
+
+            average = numbers.Average();
+            return true;
+        }
+
+        // ЗАДАЧА 197: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static void Task197(float a, float b, out float quotient, out float remainder)
+        {
+            quotient = b == 0 ? float.NaN : a / b;
+            remainder = b == 0 ? float.NaN : a % b;
+        }
+
+        // ЗАДАЧА 198: Реализуйте метод, который возвращает true/false через return, а результат через out.
+        static bool Task198(int year, out bool isLeapYear)
+        {
+            isLeapYear = false;
+            if (year < 1 || year > 9999)
+                return false;
+
+            isLeapYear = DateTime.IsLeapYear(year);
+            return true;
+        }
+
+        // ЗАДАЧА 199: Реализуйте функцию деления, возвращающую частное и остаток через out.
+        static bool Task199(int a, int b, out int divisionResult)
+        {
+            divisionResult = 0;
+            if (b == 0)
+                return false;
+
+            divisionResult = a / b;
+            return true;
+        }
+
+        // ЗАДАЧА 200: Создайте метод, меняющий местами два значения через ref.
+        static void Task200(ref object obj1, ref object obj2)
+        {
+            object temp = obj1;
+            obj1 = obj2;
+            obj2 = temp;
+        }
+    }
+}
