@@ -1,0 +1,1066 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp8
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            #region Задание №1 с 1 по 14
+            Console.WriteLine("Задание №1 [c 1 по 14]");
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 1:
+                    Console.Write("Введите A: ");
+                    int A = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите B (B > A): ");
+                    int B = int.Parse(Console.ReadLine());
+
+                    int count = 0;
+                    for (int i = A; i <= B; i++)
+                    {
+                        Console.Write(i + " ");
+                        count++;
+                    }
+                    break;
+                case 2:
+                    Console.Write("Введите A: ");
+                    int A2 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите B (B > A): ");
+                    int B2 = int.Parse(Console.ReadLine());
+
+                    int count2 = 0;
+                    for (int i = B2 - 1; i > A2; i--)
+                    {
+                        Console.Write(i + " ");
+                        count2++;
+                    }
+                    Console.WriteLine($"\nКоличество чисел N: {count2}");
+                    break;
+                case 3:
+                    Console.Write("Введите A: ");
+                    int A3 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите N (N > 0): ");
+                    int N3 = int.Parse(Console.ReadLine());
+
+                    double result = 1;
+                    for (int i = 1; i <= N3; i++)
+                    {
+                        result *= A3;
+                    }
+
+                    Console.WriteLine($"{A3} в степени {N3} = {result}");
+                    break;
+                case 4:
+                    Console.Write("Введите A: ");
+                    int A4 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите N (N > 0): ");
+                    int N4 = int.Parse(Console.ReadLine());
+
+                    for (int i = 1; i <= N4; i++)
+                    {
+                        double p = Math.Pow(A4, i);
+                        Console.WriteLine($"{A4}^{i} = {p}");
+                    }
+                    break;
+                case 5:
+                    Console.Write("Введите A: ");
+                    int A5 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите N (N > 0): ");
+                    int N5 = int.Parse(Console.ReadLine());
+
+                    double sum = 0;
+                    double power = 1;
+                    for (int i = 0; i <= N5; i++)
+                    {
+                        sum += power;
+                        power *= A5;
+                        Console.WriteLine(sum);
+                    }
+                    Console.WriteLine($"1 + {A5} + {A5}^2 + ... + {A5}^{N5} = {sum}");
+                    break;
+                case 6:
+                    Console.Write("Введите N: ");
+                    int N6 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите M (M > 1): ");
+                    int M6 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите K: ");
+                    int K6 = int.Parse(Console.ReadLine());
+
+                    while (3 * K6 >= N6)
+                    {
+                        K6++;
+                    }
+                    Console.WriteLine($"Наименьшее K: {K6}");
+                    Console.WriteLine($"Значение 3K: {3 * K6}");
+                    break;
+                case 7:
+                    Console.Write("Введите N: ");
+                    int N7 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите M (M > 1): ");
+                    int M7 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите K: ");
+                    int K7 = int.Parse(Console.ReadLine());
+
+                    int lastValidK = 1;
+                    while (3 * K7 < N7)
+                    {
+                        lastValidK = K7;
+                        K7++;
+                    }
+                    Console.WriteLine($"K = {lastValidK} , 3K = {3 * lastValidK}");
+                    break;
+                case 8:
+                    Console.Write("Введите A (A > 1): ");
+                    int A8 = int.Parse(Console.ReadLine());
+
+                    int N8 = 0;
+                    double sum8 = 0;
+
+                    while (sum8 <= A8)
+                    {
+                        N8++;
+                        sum8 += 1.0 / N8;
+                    }
+                    Console.WriteLine($"N = {N8}, сумма = {sum8}");
+                    break;
+                case 9:
+                    Console.Write("Введите N: ");
+                    int N9 = int.Parse(Console.ReadLine());
+
+                    double product = 1;
+                    for (int i9 = 1; i9 <= N9; i9++)
+                    {
+                        product *= i9;
+                    }
+                    Console.WriteLine($"N = {N9}! = {product}");
+                    break;
+                case 10:
+                    Console.Write("Введите целое число N (> 0): ");
+                    int N = int.Parse(Console.ReadLine());
+
+                    double p10 = 1.0;
+                    for (int i = 1; i <= N; i++)
+                    {
+                        p10 *= 1.0 / i;
+                    }
+                    Console.WriteLine(p10);
+                    break;
+                case 11:
+                    Console.Write("Введите вещественное число X: ");
+                    double X11 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите целое число N (> 0): ");
+                    int N11 = int.Parse(Console.ReadLine());
+
+                    double sum11 = 1.0;
+                    double factorial11 = 1.0;
+                    double power11 = 1.0;
+
+                    for (int i11 = 1; i11 <= N11; i11++)
+                    {
+                        factorial11 *= i11;
+                        power11 *= X11;
+                        sum11 += power11 / factorial11;
+                    }
+                    Console.WriteLine($"Sum = {sum11}");
+                    break;
+                case 12:
+                    Console.Write("Введите вещественное число X: ");
+                    double X12 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите целое число N (> 0): ");
+                    int N12 = int.Parse(Console.ReadLine());
+
+                    double sum12 = 0;
+                    double power12 = X12;
+                    int denominator12 = 1;
+                    int sign12 = 1;
+
+                    for (int i12 = 0; i12 <= N12; i12++)
+                    {
+                        double term12 = sign12 * power12 / denominator12;
+                        sum12 += term12;
+
+                        sign12 = -sign12;
+                        power12 *= X12 * X12;
+                        denominator12 += 2;
+                    }
+                    Console.WriteLine($"Sum = {sum12}");
+                    break;
+                case 13:
+                    Console.Write("Введите вещественное число X: ");
+                    double X13 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите целое число N (> 0): ");
+                    int N13 = int.Parse(Console.ReadLine());
+
+                    double sum13 = 1.0;
+                    double term13 = 1.0;
+                    int sign13 = -1;
+
+                    for (int i13 = 1; i13 <= N13; i13++)
+                    {
+                        term13 *= (X13 * X13) / ((2 * i13 - 1) * (2 * i13));
+                        sum13 += sign13 * term13;
+                        sign13 = -sign13;
+                    }
+                    Console.WriteLine($"Sum = {sum13}");
+                    break;
+                case 14:
+                    Console.Write("Введите X (|X| < 1): ");
+                    double X14 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите N (> 0): ");
+                    int N14 = int.Parse(Console.ReadLine());
+
+                    double sum14 = 0.0;
+                    for (int k14 = 1; k14 <= N14; k14++)
+                    {
+                        double term14 = Math.Pow(-1, k14 + 1) * Math.Pow(X14, k14) / k14;
+                        sum14 += term14;
+                    }
+
+                    Console.WriteLine($"Приближённое значение ln(1+X): {sum14}");
+                    Console.WriteLine($"Точное значение ln(1+X): {Math.Log(1 + X14)}");
+                    break;
+
+                default:
+                    Console.WriteLine("Ошибка ввода данных");
+                    break;
+
+            }
+            #endregion
+
+
+            #region Задание №2 с 15 по 30
+            Console.WriteLine("Задание №2 [c 15 по 30]");
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 15:
+                    Console.Write("Введите X (|X| < 1): ");
+                    double X15 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите N (> 0): ");
+                    int N15 = int.Parse(Console.ReadLine());
+
+                    double sum15 = 0;
+                    double power15 = X15;
+                    int denominator15 = 1;
+                    int sign15 = 1;
+
+                    for (int i = 0; i <= N15; i++)
+                    {
+                        double term15 = sign15 * power15 / denominator15;
+                        sum15 += term15;
+
+                        sign15 = -sign15;
+                        power15 *= X15 * X15;
+                        denominator15 += 2;
+                    }
+
+                    Console.WriteLine($"Приближённое значение arctg({X15}): {sum15}");
+                    Console.WriteLine($"Точное значение arctg({X15}): {Math.Atan(X15)}");
+                    break;
+
+                case 16:
+                    Console.Write("Введите N (> 2): ");
+                    int N16 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите A: ");
+                    double A16 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите B (B > A): ");
+                    double B16 = double.Parse(Console.ReadLine());
+
+                    double H16 = (B16 - A16) / (N16 - 1);
+                    Console.WriteLine($"H = {H16}");
+
+                    Console.WriteLine("Точки разбиения:");
+                    for (int i = 0; i < N16; i++)
+                    {
+                        double point = A16 + i * H16;
+                        Console.WriteLine($"Точка {i + 1}: {point}");
+                    }
+                    break;
+
+                case 17:
+                    Console.Write("Введите N (> 2): ");
+                    int N17 = int.Parse(Console.ReadLine());
+
+                    Console.Write("Введите A: ");
+                    double A17 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите B (B > A): ");
+                    double B17 = double.Parse(Console.ReadLine());
+
+                    double H17 = (B17 - A17) / (N17 - 1);
+                    Console.WriteLine("Значения функции F(X) = 1 - sin(X):");
+
+                    for (int i = 0; i < N17; i++)
+                    {
+                        double x = A17 + i * H17;
+                        double fx = 1 - Math.Sin(x);
+                        Console.WriteLine($"F({x}) = {fx}");
+                    }
+                    break;
+
+                case 18:
+                    Console.Write("Введите D (> 0): ");
+                    double D18 = double.Parse(Console.ReadLine());
+
+                    double a_prev18 = 2;
+                    double a_curr18 = 2 + 1.0 / a_prev18;
+                    int K18 = 2;
+
+                    while (Math.Abs(a_curr18 - a_prev18) >= D18)
+                    {
+                        a_prev18 = a_curr18;
+                        a_curr18 = 2 + 1.0 / a_prev18;
+                        K18++;
+                    }
+
+                    Console.WriteLine($"Номер K: {K18}");
+                    Console.WriteLine($"A{K18 - 1} = {a_prev18}");
+                    Console.WriteLine($"A{K18} = {a_curr18}");
+                    break;
+
+                case 19:
+                    Console.Write("Введите D (> 0): ");
+                    double D19 = double.Parse(Console.ReadLine());
+
+                    double a_prev19_2 = 1;
+                    double a_prev19_1 = 2;
+                    double a_curr19 = (a_prev19_2 + a_prev19_1) / 2;
+                    int K19 = 3;
+
+                    while (Math.Abs(a_curr19 - a_prev19_1) >= D19)
+                    {
+                        a_prev19_2 = a_prev19_1;
+                        a_prev19_1 = a_curr19;
+                        a_curr19 = (a_prev19_2 + a_prev19_1) / 2;
+                        K19++;
+                    }
+
+                    Console.WriteLine($"Номер K: {K19}");
+                    Console.WriteLine($"A{K19 - 1} = {a_prev19_1}");
+                    Console.WriteLine($"A{K19} = {a_curr19}");
+                    break;
+
+                case 20:
+                    Console.Write("Введите N (N >= 10): ");
+                    int N20 = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Нечетные кратные пяти числа:");
+                    for (int i = 10; i <= N20; i++)
+                    {
+                        if (i % 5 == 0 && i % 2 != 0)
+                        {
+                            Console.Write(i + " ");
+                        }
+                    }
+                    break;
+
+                case 21:
+                    Console.WriteLine("Квадраты чисел от 11 до 99:");
+                    for (int i = 11; i <= 99; i++)
+                    {
+                        Console.WriteLine($"{i}^2 = {i * i}");
+                    }
+                    break;
+
+                case 22:
+                    Console.WriteLine("Вводите значения x (для выхода введите 'exit'):");
+                    while (true)
+                    {
+                        Console.Write("x = ");
+                        string input = Console.ReadLine();
+                        if (input.ToLower() == "exit") break;
+
+                        double x22 = double.Parse(input);
+                        double r22;
+
+                        if (x22 > 0 && x22 < 3.14)
+                        {
+                            r22 = Math.Sin(x22);
+                        }
+                        else if (x22 >= -3.14 && x22 < 0)
+                        {
+                            r22 = Math.Pow(x22, 3);
+                        }
+                        else if (x22 < -2 * 3.14 || x22 > 2 * 3.14)
+                        {
+                            r22 = Math.Pow(x22, 2);
+                        }
+                        else
+                        {
+                            r22 = 0;
+                        }
+
+                        Console.WriteLine($"r = {r22}");
+                    }
+                    break;
+
+                case 23:
+                    Console.Write("Введите n: ");
+                    int n23 = int.Parse(Console.ReadLine());
+
+                    long factorial23 = 1;
+                    long power2_23 = 1;
+
+                    for (int i = 1; i <= n23; i++)
+                    {
+                        factorial23 *= i;
+                        power2_23 *= 2;
+                    }
+
+                    Console.WriteLine($"{n23}! = {factorial23}");
+                    Console.WriteLine($"2^{n23} = {power2_23}");
+                    break;
+
+                case 24:
+                    Console.Write("Введите число: ");
+                    int number24 = int.Parse(Console.ReadLine());
+
+                    int maxDigit24 = 0;
+                    int temp24 = Math.Abs(number24);
+
+                    while (temp24 > 0)
+                    {
+                        int digit = temp24 % 10;
+                        if (digit > maxDigit24)
+                        {
+                            maxDigit24 = digit;
+                        }
+                        temp24 /= 10;
+                    }
+
+                    Console.WriteLine($"Наибольшая цифра: {maxDigit24}");
+                    break;
+
+                case 25:
+                    Console.Write("Введите натуральное число: ");
+                    int number25 = int.Parse(Console.ReadLine());
+
+                    int firstDigit25 = 0;
+                    int sumDigits25 = 0;
+                    int temp25 = Math.Abs(number25);
+
+                    while (temp25 > 0)
+                    {
+                        int digit = temp25 % 10;
+                        sumDigits25 += digit;
+
+                        if (temp25 < 10)
+                        {
+                            firstDigit25 = temp25;
+                        }
+                        temp25 /= 10;
+                    }
+
+                    Console.WriteLine($"Первая цифра: {firstDigit25}");
+                    Console.WriteLine($"Сумма цифр: {sumDigits25}");
+                    break;
+
+                case 26:
+                    Console.Write("Введите число: ");
+                    int number26 = int.Parse(Console.ReadLine());
+
+                    string numStr26 = number26.ToString();
+                    bool isPalindrome26 = true;
+
+                    for (int i = 0; i < numStr26.Length / 2; i++)
+                    {
+                        if (numStr26[i] != numStr26[numStr26.Length - 1 - i])
+                        {
+                            isPalindrome26 = false;
+                            break;
+                        }
+                    }
+
+                    Console.WriteLine($"Число {number26} {(isPalindrome26 ? "является" : "не является")} палиндромом");
+                    break;
+
+                case 27:
+                    Console.WriteLine("Суммы квадратов чисел от 12 до 80:");
+                    for (int i = 12; i <= 80; i++)
+                    {
+                        int sumSquares27 = 0;
+                        for (int j = 1; j <= i; j++)
+                        {
+                            sumSquares27 += j * j;
+                        }
+                        Console.WriteLine($"Сумма квадратов от 1 до {i}: {sumSquares27}");
+                    }
+                    break;
+
+                case 28:
+                    Console.WriteLine("Разности квадратов чисел от 22 до 88:");
+                    for (int i = 22; i <= 88; i++)
+                    {
+                        int diffSquares28 = (i + 1) * (i + 1) - i * i;
+                        Console.WriteLine($"{i + 1}^2 - {i}^2 = {diffSquares28}");
+                    }
+                    break;
+
+                case 29:
+                    Console.Write("Введите A: ");
+                    double A29 = double.Parse(Console.ReadLine());
+
+                    Console.Write("Введите N (> 0): ");
+                    int N29 = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Разности квадратов:");
+                    for (int i = 1; i <= N29; i++)
+                    {
+                        double diff29 = A29 * A29 - i * i;
+                        Console.WriteLine($"{A29}^2 - {i}^2 = {diff29}");
+                    }
+                    break;
+
+                case 30:
+                    Console.Write("Введите число: ");
+                    int number30 = int.Parse(Console.ReadLine());
+
+                    int minDigit30 = 9;
+                    int temp30 = Math.Abs(number30);
+
+                    while (temp30 > 0)
+                    {
+                        int digit = temp30 % 10;
+                        if (digit < minDigit30)
+                        {
+                            minDigit30 = digit;
+                        }
+                        temp30 /= 10;
+                    }
+
+                    Console.WriteLine($"Наименьшая цифра: {minDigit30}");
+                    break;
+
+                default:
+                    Console.WriteLine("Ошибка ввода данных");
+                    break;
+            }
+            #endregion
+
+
+            #region Задание №3 с 1 по 30
+            Console.WriteLine("Задание №3 [c 1 по 30]");
+            switch (Convert.ToInt32(Console.ReadLine()))
+            {
+                case 1:
+                    Console.Write("Введите k: ");
+                    int k1 = int.Parse(Console.ReadLine());
+                    double W1 = 0;
+                    for (int i = 3; i <= k1; i++)
+                    {
+                        W1 += Math.Pow(-1, i) * (i + 3) / (2.0 * (i - 4));
+                    }
+                    Console.WriteLine($"W = {W1}");
+                    break;
+
+                case 2:
+                    Console.Write("Введите x: ");
+                    double x2 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите t: ");
+                    double t2 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите k: ");
+                    int k2 = int.Parse(Console.ReadLine());
+                    double U2 = 1;
+                    for (int i = 3; i <= k2; i++)
+                    {
+                        double sum2 = 0;
+                        for (int j = 1; j <= k2; j++)
+                        {
+                            sum2 += (i - 4.0) / (i - 6);
+                        }
+                        U2 *= Math.Pow(t2 * x2, t2) / (i - 12) * sum2;
+                    }
+                    Console.WriteLine($"U = {U2}");
+                    break;
+
+                case 3:
+                    Console.Write("Введите x: ");
+                    double x3 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите k: ");
+                    double k3 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите n: ");
+                    int n3 = int.Parse(Console.ReadLine());
+                    double S3 = 0;
+                    for (int i = 1; i <= n3; i++)
+                    {
+                        double product3 = 1;
+                        for (int m = 1; m <= n3 + 2; m++)
+                        {
+                            product3 *= (Math.Pow(m, 3) - 8) / (m - 4.0);
+                        }
+                        S3 += Math.Pow(-3, 3 * k3 + 1) / (2 * (k3 - 2) * Math.Pow(x3, 3 * k3 + 1)) * product3;
+                    }
+                    Console.WriteLine($"S = {S3}");
+                    break;
+
+                case 4:
+                    Console.Write("Введите n: ");
+                    int n4 = int.Parse(Console.ReadLine());
+                    Console.Write("Введите k: ");
+                    int k4 = int.Parse(Console.ReadLine());
+                    double Q4 = 0;
+                    for (int i = 1; i <= n4; i++)
+                    {
+                        Q4 += Math.Pow(-1, k4) * (k4 - 7) / (2.0 * (n4 - k4));
+                    }
+                    Console.WriteLine($"Q = {Q4}");
+                    break;
+
+                case 5:
+                    Console.Write("Введите x: ");
+                    double x5 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите x: ");
+                    double n5 = double.Parse(Console.ReadLine());
+                    double W5 = 0;
+                    for (int i = 1; i <= 9; i++)
+                    {
+                        double product5 = 1;
+                        for (int n = 1; n <= 11; n++)
+                        {
+                            product5 *= (n * n - 8) / (n - 12.0);
+                        }
+                        W5 += Math.Pow(Math.Abs(7 - x5), i * n5) / Math.Pow(i - 3, 5) * product5;
+                    }
+                    Console.WriteLine($"W = {W5}");
+                    break;
+
+                case 6:
+                    Console.Write("Введите k: ");
+                    int k6 = int.Parse(Console.ReadLine());
+                    double W6 = 0;
+                    for (int i = 1; i <= k6; i++)
+                    {
+                        W6 += Math.Pow(-1, i) * (i + 3) / (i - 4.0);
+                    }
+                    Console.WriteLine($"W = {W6}");
+                    break;
+
+                case 7:
+                    Console.Write("Введите x: ");
+                    double x7 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите k: ");
+                    double k7 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите n: ");
+                    int n7 = int.Parse(Console.ReadLine());
+                    double Q7 = 0;
+                    for (int i = 1; i <= n7; i++)
+                    {
+                        double factorial = 1;
+                        for (int j = 1; j <= n7; j++) factorial *= j;
+                        Q7 += Math.Pow(-1, k7) * Math.Pow(x7 + 3, 2) / factorial;
+                    }
+                    Console.WriteLine($"Q = {Q7}");
+                    break;
+
+                case 8:
+                    Console.Write("Введите k: ");
+                    int k8 = int.Parse(Console.ReadLine());
+                    double P8 = 1;
+                    for (int j = 1; j <= k8; j++)
+                    {
+                        double sum8 = 0;
+                        for (int i = 1; i <= k8 + 3; i++)
+                        {
+                            double fact4 = 1;
+                            for (int m = 1; m <= 4; m++) fact4 *= m;
+                            sum8 += fact4 / (i - 7.0);
+                        }
+                        double factJJ = 1;
+                        for (int m = 1; m <= j - j * j; m++) factJJ *= m;
+                        P8 *= (j - Math.Pow(j, 2)) / (j - 4.0) * sum8;
+                    }
+                    Console.WriteLine($"P = {P8}");
+                    break;
+
+                case 9:
+                    Console.Write("Введите k: ");
+                    int k9 = int.Parse(Console.ReadLine());
+                    double W9 = 0;
+                    for (int i = 1; i <= k9; i++)
+                    {
+                        double factorial = 1;
+                        for (int j = 1; j <= k9; j++) factorial *= j;
+                        W9 += Math.Pow(-1, k9) * Math.Pow(k9 - 3, 2) / factorial;
+                    }
+                    Console.WriteLine($"W = {W9}");
+                    break;
+
+                case 10:
+                    Console.Write("Введите n: ");
+                    int n10 = int.Parse(Console.ReadLine());
+                    double Q10 = 0;
+                    for (int k = 1; k <= n10; k++)
+                    {
+                        double factorial = 1;
+                        for (int i = 1; i <= k + n10; i++) factorial *= i;
+                        Q10 += Math.Pow(-1, k) * (k - 7) / factorial;
+                    }
+                    Console.WriteLine($"Q = {Q10}");
+                    break;
+
+                case 11:
+                    Console.Write("Введите x: ");
+                    double x11 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите n: ");
+                    int n11 = int.Parse(Console.ReadLine());
+                    double S11 = 0;
+                    for (int k = 1; k <= n11; k++)
+                    {
+                        double sum11 = 0;
+                        for (int m = 1; m <= k + 7; m++)
+                        {
+                            sum11 += (m * m - 9) / (m - 2.0);
+                        }
+                        double factorial = 1;
+                        for (int i = 1; i <= k - 5; i++) factorial *= i;
+                        S11 += Math.Pow(-1, 2 * k + 1) / factorial * sum11;
+                    }
+                    Console.WriteLine($"S = {S11}");
+                    break;
+
+                case 12:
+                    Console.Write("Введите k: ");
+                    int k12 = int.Parse(Console.ReadLine());
+                    double W12 = 0;
+                    for (int j = 1; j <= k12; j++)
+                    {
+                        double sum12 = 0;
+                        for (int m = 1; m <= k12 + 7; m++)
+                        {
+                            sum12 += (k12 * k12 - 8) / (k12 + 2.0);
+                        }
+                        double factorial = 1;
+                        for (int i = 1; i <= j - 3; i++) factorial *= i;
+                        W12 += Math.Pow(-1, k12) / factorial * sum12;
+                    }
+                    Console.WriteLine($"W = {W12}");
+                    break;
+
+                case 13:
+                    Console.Write("Введите n: ");
+                    int n13 = int.Parse(Console.ReadLine());
+                    double Q13 = 0;
+                    for (int k = 1; k <= n13; k++)
+                    {
+                        double factorial = 1;
+                        double f = 1;
+                        for (int i = 1; i <= k; i++) factorial *= i;
+                        double comb = f * (k + 7) / (f * (k) * f * (7));
+                        Q13 += Math.Pow(k - 3, k - 1) / factorial * comb;
+                    }
+                    Console.WriteLine($"Q = {Q13}");
+                    break;
+
+                case 14:
+                    Console.Write("Введите x: ");
+                    double x14 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите n: ");
+                    int n14 = int.Parse(Console.ReadLine());
+                    double S14 = 0;
+                    for (int k = 1; k <= n14; k++)
+                    {
+                        double sum14 = 0;
+                        for (int i = 1; i <= k + 7; i++)
+                        {
+                            sum14 += (i * i - 27) / (i - 7.0);
+                        }
+                        double factorial = 1;
+                        for (int i = 1; i <= k - 5; i++) factorial *= i;
+                        S14 += Math.Pow(-2, k - 1) / factorial * sum14;
+                    }
+                    Console.WriteLine($"S = {S14}");
+                    break;
+
+                case 15:
+                    Console.Write("Введите k: ");
+                    int k15 = int.Parse(Console.ReadLine());
+                    double Y15 = 0;
+                    for (int n = 1; n <= k15; n++)
+                    {
+                        double factorial = 1;
+                        for (int i = 1; i <= 3 * n; i++) factorial *= i;
+                        Y15 += Math.Pow(-1, 2 * n) * Math.Pow(n * n - 9, 2) / factorial;
+                    }
+                    Console.WriteLine($"Y = {Y15}");
+                    break;
+
+                case 16:
+                    Console.Write("Введите k: ");
+                    int k16 = int.Parse(Console.ReadLine());
+                    double Z16 = 1;
+                    for (int n = 3; n <= k16; n++)
+                    {
+                        double factN2 = (n + 2) * Math.Abs(n - 4);
+                        double factN3 = (n + 3);
+                        Z16 *= factN2 / factN3;
+                    }
+                    Console.WriteLine($"Z = {Z16}");
+                    break;
+
+                case 17:
+                    Console.Write("Введите k: ");
+                    int k17 = int.Parse(Console.ReadLine());
+                    double W17 = 0;
+                    for (int i = 3; i <= k17; i++)
+                    {
+                        W17 += Math.Pow(-1, i) * (i + 3) * (Math.Pow(k17, 3) - 8) / (k17 + 4.0);
+                    }
+                    Console.WriteLine($"W = {W17}");
+                    break;
+
+                case 18:
+                    Console.Write("Введите k: ");
+                    int k18 = int.Parse(Console.ReadLine());
+                    double P18 = 1;
+                    for (int j = 1; j <= k18; j++)
+                    {
+                        double sum18 = 0;
+                        for (int i = 1; i <= k18 + 3; i++)
+                        {
+                            double fact4 = CalculateFactorial(4);
+                            sum18 += fact4 / (i - 7.0);
+                        }
+                        double factJJ = CalculateFactorial(j - j * j);
+                        P18 *= factJJ / (j + 14.0) * sum18;
+                    }
+                    Console.WriteLine($"P = {P18}");
+                    break;
+
+                case 19:
+                    Console.Write("Введите n: ");
+                    int n19 = int.Parse(Console.ReadLine());
+                    double S19 = 0;
+                    for (int i = 1; i <= n19; i++)
+                    {
+                        double factorial = CalculateFactorial(n19 + 2);
+                        S19 += Math.Pow(-1, i) * (n19 * n19 - 27) / (3.0 * factorial);
+                    }
+                    Console.WriteLine($"S = {S19}");
+                    break;
+
+                case 20:
+                    Console.Write("Введите k: ");
+                    int k20 = int.Parse(Console.ReadLine());
+                    double Z20 = 1;
+                    for (int j = 1; j <= k20; j++)
+                    {
+                        double sum20 = 0;
+                        for (int i = 1; i <= k20 + 5; i++)
+                        {
+                            double fact4 = CalculateFactorial(4);
+                            sum20 += fact4 / (i - 11.0);
+                        }
+                        double fact6 = CalculateFactorial(6);
+                        Z20 *= Math.Pow(k20, (j + 2) / 2.0) / (j - 3.0) * sum20 * Math.Pow(k20, fact6);
+                    }
+                    Console.WriteLine($"Z = {Z20}");
+                    break;
+
+                case 21:
+                    Console.Write("Введите x: ");
+                    double x21 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите k: ");
+                    int k21 = int.Parse(Console.ReadLine());
+                    double U21 = 1;
+                    for (int i = 3; i <= k21; i++)
+                    {
+                        double sum21 = 0;
+                        for (int j = 1; j <= k21; j++)
+                        {
+                            sum21 += (i - 2.0) / (j - 7);
+                        }
+                        U21 *= Math.Pow(x21, i) / (i - 3) * sum21;
+                    }
+                    Console.WriteLine($"U = {U21}");
+                    break;
+
+                case 22:
+                    Console.Write("Введите k: ");
+                    int k22 = int.Parse(Console.ReadLine());
+                    double A22 = 1;
+                    for (int j = 1; j <= k22; j++)
+                    {
+                        double sum22 = 0;
+                        for (int i = 1; i <= 9; i++)
+                        {
+                            sum22 += (i - 3.0) / (i - 7);
+                        }
+                        double factJ2 = CalculateFactorial(j * j - 4);
+                        A22 *= factJ2 / (j - k22 + 1.0) * sum22;
+                    }
+                    Console.WriteLine($"A = {A22}");
+                    break;
+
+                case 23:
+                    Console.Write("Введите n: ");
+                    int n23 = int.Parse(Console.ReadLine());
+                    double S23 = 0;
+                    for (int i = 1; i <= n23; i++)
+                    {
+                        double factorial = CalculateFactorial(n23);
+                        S23 += Math.Pow(n23 - 4, i) * (n23 + 7) / factorial;
+                    }
+                    Console.WriteLine($"S = {S23}");
+                    break;
+
+                case 24:
+                    Console.Write("Введите k: ");
+                    int k24 = int.Parse(Console.ReadLine());
+                    double Z24 = 1;
+                    for (int j = 3; j <= k24; j++)
+                    {
+                        double sum24 = 0;
+                        for (int i = 1; i <= k24 + 3; i++)
+                        {
+                            double comb = CalculateFactorial(i + 5) / (CalculateFactorial(i) * CalculateFactorial(5));
+                            sum24 += comb * 3.5 * i;
+                        }
+                        double factJ2 = CalculateFactorial(j + 2);
+                        Z24 *= factJ2 / (j - 3.0) * sum24;
+                    }
+                    Console.WriteLine($"Z = {Z24}");
+                    break;
+
+                case 25:
+                    Console.Write("Введите x: ");
+                    double x25 = double.Parse(Console.ReadLine());
+                    Console.Write("Введите n: ");
+                    int n25 = int.Parse(Console.ReadLine());
+                    double S25 = 0;
+                    for (int k = 1; k <= n25; k++)
+                    {
+                        double sum25 = 0;
+                        for (int m = 1; m <= k + n25; m++)
+                        {
+                            sum25 += (Math.Pow(m, 3) - 8) / (m - 3.0);
+                        }
+                        double factorial = CalculateFactorial(k - 2);
+                        S25 += Math.Pow(-3, 2 * k + 1) / factorial * sum25;
+                    }
+                    Console.WriteLine($"S = {S25}");
+                    break;
+
+                case 26:
+                    Console.Write("Введите k: ");
+                    int k26 = int.Parse(Console.ReadLine());
+                    double P26 = 1;
+                    for (int j = 1; j <= k26; j++)
+                    {
+                        double sum26 = 0;
+                        for (int i = 1; i <= k26 + 3; i++)
+                        {
+                            double comb = CalculateFactorial(i + 5) / (CalculateFactorial(i) * CalculateFactorial(5));
+                            sum26 += comb;
+                        }
+                        double factJ6 = CalculateFactorial(j - 6);
+                        P26 *= factJ6 / (j - 3.0) * sum26;
+                    }
+                    Console.WriteLine($"P = {P26}");
+                    break;
+
+                case 27:
+                    Console.Write("Введите k: ");
+                    int k27 = int.Parse(Console.ReadLine());
+                    double Z27 = 1;
+                    for (int j = 1; j <= k27; j++)
+                    {
+                        double sum27 = 0;
+                        for (int i = 1; i <= k27 + 3; i++)
+                        {
+                            double comb = CalculateFactorial(i + 5) / (CalculateFactorial(i) * CalculateFactorial(5));
+                            sum27 += comb * 3 * i;
+                        }
+                        double factJ2 = CalculateFactorial(j + 2);
+                        Z27 *= factJ2 / (j - 3.0) * sum27;
+                    }
+                    Console.WriteLine($"Z = {Z27}");
+                    break;
+
+                case 28:
+                    Console.Write("Введите k: ");
+                    int k28 = int.Parse(Console.ReadLine());
+                    double Z28 = 1;
+                    for (int j = 1; j <= k28; j++)
+                    {
+                        double factN2 = CalculateFactorial(k28 + 2);
+                        Z28 *= (k28 + 2) * k28 - 9 / (double)CalculateFactorial(k28 + 3);
+                    }
+                    Console.WriteLine($"Z = {Z28}");
+                    break;
+
+                case 29:
+                    Console.Write("Введите k: ");
+                    int k29 = int.Parse(Console.ReadLine());
+                    double P29 = 1;
+                    for (int j = 1; j <= k29; j++)
+                    {
+                        double factJ6 = CalculateFactorial(j - 6);
+                        double factJ1 = CalculateFactorial(j - 1);
+                        P29 *= factJ6 / ((j - 3.0) * factJ1);
+                    }
+                    Console.WriteLine($"P = {P29}");
+                    break;
+
+                case 30:
+                    Console.Write("Введите k: ");
+                    int k30 = int.Parse(Console.ReadLine());
+                    double A30 = 1;
+                    for (int j = 1; j <= k30; j++)
+                    {
+                        double sum30 = 0;
+                        for (int i = 1; i <= k30 + 3; i++)
+                        {
+                            double comb = CalculateFactorial(i + 5) / (CalculateFactorial(i) * CalculateFactorial(5));
+                            sum30 += comb;
+                        }
+                        double factJ4 = CalculateFactorial(j - 4);
+                        A30 *= factJ4 / (j - 3.0) * sum30;
+                    }
+                    Console.WriteLine($"A = {A30}");
+                    break;
+
+                default:
+                    Console.WriteLine("Ошибка ввода данных");
+                    break;
+            }
+        }
+
+        static double CalculateFactorial(int n)
+        {
+            if (n < 0) return 0;
+            if (n == 0 || n == 1) return 1;
+
+            double result = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                result *= i;
+            }
+            return result;
+
+            #endregion
+
+
+        }
+    }
+}
